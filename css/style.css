@@ -232,3 +232,28 @@ body {
 .sog {
     cursor: pointer;
 }
+
+/*--- Styling for smaller screens ---*/
+
+@media (max-width: 668px) {
+    .body_grid {
+        grid-gap: 100px 50px;
+        grid-template-rows: repeat(3, auto);
+        grid-template-columns: repeat(1, minmax(100px, 1fr));
+        grid-template-areas: 
+        'hero hero hero'
+        'main_1 main_2 main_3'
+        'footer footer footer'
+        ;
+    }
+
+    .header {
+        bottom: 0;
+        position: fixed;
+        width: 100%;
+    }
+
+    .menu_item:not(:last-child) {
+        display: none;
+    }
+}
