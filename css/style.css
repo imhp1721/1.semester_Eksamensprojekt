@@ -1,5 +1,7 @@
 :root {
+
 /*--- color palette ---*/
+
 /* basics */
 ---neutral_bg: #fffaf2;
 ---color_bg: #ffd98c;
@@ -14,6 +16,7 @@
 ---dark_warm: #ff5e0d;
 
 /*--- font families ---*/
+
 ---header: all-round-gothic, sans-serif;
 /* font weights: 
     XLig = 200
@@ -36,6 +39,7 @@
 */
 
 /*--- font sizes ---*/
+
 ---xl_font: 2rem;
 ---l_font: 1.8rem;
 ---m_font: 1.5rem;
@@ -80,13 +84,15 @@ body {
     z-index: 2;
 }
 
+/*--- logo ---*/
+
 .logo_link {
     background-color: var(---light_neutral);
-    border-radius: 0 0 25% 25%;
+    border-radius: 0 0 2em 2em;
     left: 3%;
     max-width: 200px;
     position: absolute;
-    width: 15%;
+    width: 20%;
     z-index: 3;
 }
 
@@ -96,12 +102,16 @@ body {
     position: relative;
 }
 
+/*--- navbar ---*/
+
 .navigation {
     align-items: center;
     display: flex;
     justify-content: flex-end;
     margin: 0 3%;
 }
+
+/*--- main menu ---*/
 
 .main_menu {
     align-items: center;
@@ -113,24 +123,33 @@ body {
     width: 100%;
 }
 
+.active_menu {
+    border: 1px solid var(---dark_neutral);
+    border-radius: 1em;
+}
+
 .menu_item {
     align-items: center;
     display: flex;
     padding: 2%;
+    transition: background-color 1s;
 }
 
-.menu_link:hover,
-.sub_arrow:hover,
-.sog:hover,
-.logo_img:hover {
-    opacity: .6;
+.arrow {
+    max-width: 10px;
+    transform: rotate(0);
+    transition: transform 400ms ease-in;
 }
+
+/*--- hide checkboxes ---*/
 
 .menu_item input,
 .sog input {
     appearance: none;
     pointer-events: none;
 }
+
+/*--- sub menus ---*/
 
 .sub_menu {
     background-color: var(---color_bg);
@@ -152,28 +171,7 @@ body {
     padding: 1%;
 }
 
-.sub_arrow,
-.sog {
-    cursor: pointer;
-}
-
-.arrow {
-    max-width: 10px;
-    transform: rotate(0);
-    transition: transform 400ms ease-in;
-}
-
-.sub_arrow:has(input:checked) + .sub_menu,
-.sog:has(input:checked) + .sog_box {
-    opacity: 1;
-    transform: translateY(110%);
-    transition: transform 400ms ease-in, opacity 500ms ease-in-out;
-}
-
-.sub_arrow:has(input:checked) > .arrow {
-    transform: rotate(90deg);
-    transition: transform 400ms ease-in;
-}
+/*--- search icon and search field ---*/
 
 .sog_icon {
     max-width: 25px;
@@ -200,4 +198,37 @@ body {
     font-family: var(---main_txt);
     font-size: var(---m_font);
     width: 75%;
+}
+
+/*--- transitions and other effects ---*/
+
+.sub_arrow:has(input:checked) + .sub_menu,
+.sog:has(input:checked) + .sog_box {
+    opacity: 1;
+    transform: translateY(110%);
+    transition: transform 400ms ease-in, opacity 500ms ease-in-out;
+}
+
+.sub_arrow:has(input:checked) > .arrow {
+    transform: rotate(90deg);
+    transition: transform 400ms ease-in;
+}
+
+.menu_item:has(.sub_arrow input:checked),
+.menu_item:has(.sog input:checked) {
+    background-color: var(---color_bg);
+    transition: background-color 1s;
+}
+
+.logo_img:hover,
+.menu_link:hover,
+.sub_arrow:hover,
+.sog:hover,
+.sub_item:hover {
+    opacity: .6;
+}
+
+.sub_arrow,
+.sog {
+    cursor: pointer;
 }
