@@ -66,6 +66,10 @@ body {
     ;
 }
 
+/*------ text elements --------*/
+
+
+
 /*--------------------------- 
     header and navigation
 ----------------------------*/
@@ -77,16 +81,18 @@ body {
 
 .logo_link {
     background-color: var(---light_neutral);
-    border-radius: 0 0 15% 15%;
+    border-radius: 0 0 25% 25%;
     left: 3%;
+    max-width: 200px;
     position: absolute;
+    width: 15%;
     z-index: 1;
 }
 
 .logo_img {
-    width: 12rem;
+    max-width: 80%;
     padding: 10%;
-    z-index: 2;
+    position: relative;
 }
 
 .navigation {
@@ -94,40 +100,81 @@ body {
     display: flex;
     justify-content: flex-end;
     margin: 0 3%;
-    max-width: 100%;
-    white-space: nowrap;
 }
 
 .main_menu {
     align-items: center;
     display: flex;
     font-family: var(---header);
-    margin: 0 3% 0 0;
+    font-size: var(---m_font);
+    font-weight: 500;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .menu_item {
     align-items: center;
     display: flex;
-    padding: 2% 5%;
+    padding: 2%;
 }
 
-.menu_link {
+.menu_item input,
+.sog input {
+    appearance: none;
+    pointer-events: none;
+}
+
+.sub_menu {
+    background-color: var(---color_bg);
+    display: none;
+    font-family: var(---header);
     font-size: var(---m_font);
-    font-weight: 500;
+    font-weight: 400;
+    left: 0;
+    padding-left: 25%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.sub_item {
+    padding: 1%;
 }
 
 .arrow {
-    max-width: 20px;
+    max-width: 10px;
+}
+
+.sub_arrow:has(input:checked) + .sub_menu {
+    display: flex;
+    transform: translateY(110%);
 }
 
 .sog_icon {
-    max-width: 40px;
+    max-width: 25px;
 }
 
 .sog_box {
+    background-color: var(---color_bg);
     display: none;
+    justify-content: flex-end;
+    padding: 1%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
 }
 
-.sog:has input:checked .sog_box {
-    display: block;
+.sog_felt {
+    background-color: var(---neutral_bg);
+    border: none;
+    color: var(---dark_neutral);
+    font-family: var(---main_txt);
+    font-size: var(---m_font);
+    width: 75%;
+}
+
+.sog:has(input:checked) + .sog_box {
+    display: flex;
+    transform: translateY(110%);
 }
