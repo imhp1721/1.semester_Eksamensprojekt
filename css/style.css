@@ -94,6 +94,8 @@ body {
     display: flex;
     justify-content: flex-end;
     margin: 0 3%;
+    max-width: 100%;
+    white-space: nowrap;
 }
 
 .main_menu {
@@ -120,4 +122,12 @@ body {
 
 .sog_icon {
     max-width: 40px;
+}
+
+.sog_box {
+    display: none;
+}
+
+.sog:has input:checked .sog_box {
+    display: block;
 }
