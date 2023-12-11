@@ -77,6 +77,7 @@ body {
 .header {
     background-color: var(---light_neutral);
     grid-area: header;
+    z-index: 2;
 }
 
 .logo_link {
@@ -86,7 +87,7 @@ body {
     max-width: 200px;
     position: absolute;
     width: 15%;
-    z-index: 1;
+    z-index: 3;
 }
 
 .logo_img {
@@ -118,6 +119,13 @@ body {
     padding: 2%;
 }
 
+.menu_link:hover,
+.sub_arrow:hover,
+.sog:hover,
+.logo_img:hover {
+    opacity: .6;
+}
+
 .menu_item input,
 .sog input {
     appearance: none;
@@ -126,14 +134,17 @@ body {
 
 .sub_menu {
     background-color: var(---color_bg);
-    display: none;
+    display: flex;
     font-family: var(---header);
     font-size: var(---m_font);
     font-weight: 400;
     left: 0;
+    opacity: 0;
     padding-left: 25%;
     position: absolute;
     top: 0;
+    transform: translateY(-110%);
+    transition: transform 400ms ease-in, opacity 500ms ease-in-out;
     width: 100%;
 }
 
@@ -141,13 +152,27 @@ body {
     padding: 1%;
 }
 
-.arrow {
-    max-width: 10px;
+.sub_arrow,
+.sog {
+    cursor: pointer;
 }
 
-.sub_arrow:has(input:checked) + .sub_menu {
-    display: flex;
+.arrow {
+    max-width: 10px;
+    transform: rotate(0);
+    transition: transform 400ms ease-in;
+}
+
+.sub_arrow:has(input:checked) + .sub_menu,
+.sog:has(input:checked) + .sog_box {
+    opacity: 1;
     transform: translateY(110%);
+    transition: transform 400ms ease-in, opacity 500ms ease-in-out;
+}
+
+.sub_arrow:has(input:checked) > .arrow {
+    transform: rotate(90deg);
+    transition: transform 400ms ease-in;
 }
 
 .sog_icon {
@@ -156,12 +181,15 @@ body {
 
 .sog_box {
     background-color: var(---color_bg);
-    display: none;
+    display: flex;
     justify-content: flex-end;
+    opacity: 0;
     padding: 1%;
     position: absolute;
     right: 0;
     top: 0;
+    transform: translateY(-110%);
+    transition: transform 400ms ease-in, opacity 500ms ease-in-out;
     width: 100%;
 }
 
@@ -172,9 +200,4 @@ body {
     font-family: var(---main_txt);
     font-size: var(---m_font);
     width: 75%;
-}
-
-.sog:has(input:checked) + .sog_box {
-    display: flex;
-    transform: translateY(110%);
 }
