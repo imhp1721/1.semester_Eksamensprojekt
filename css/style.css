@@ -1,0 +1,123 @@
+:root {
+/*--- color palette ---*/
+/* basics */
+---neutral_bg: #fffaf2;
+---color_bg: #ffd98c;
+---light_neutral: #f2e3ce;
+---dark_neutral: #262626;
+
+/* accents */
+---light_cool: #e5b6ac;
+---mid_cool: #5c81cc;
+---dark_cool: #1a1c33;
+---light_warm: #e5ac00;
+---dark_warm: #ff5e0d;
+
+/*--- font families ---*/
+---header: all-round-gothic, sans-serif;
+/* font weights: 
+    XLig = 200
+    Book = 400
+    Medium = 500
+    Demi = 600
+    Bold = 700
+*/
+
+---main_txt: como, sans-serif;
+/* font weights: 
+    ExtraLight = 200
+    Light = 300
+    Regular = 400
+    Medium = 500
+    Semibold = 600
+    Bold = 700
+    ExtraBold = 800
+    Heavy = 900
+*/
+
+/*--- font sizes ---*/
+---xl_font: 2rem;
+---l_font: 1.8rem;
+---m_font: 1.5rem;
+---s_font: 1rem;
+---xs_font: .8rem;
+}
+
+/*-------------------- 
+    general styling
+---------------------*/
+
+body {
+    background-color: var(---neutral_bg);
+    color: var(---dark_neutral);
+    font-family: var(---main_txt);
+}
+
+.body_grid {
+    display: grid;
+    grid-gap: 100px 50px;
+    grid-template-rows: repeat(4, auto);
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-areas: 
+    'header header header'
+    'hero hero hero'
+    'main_1 main_2 main_3'
+    'footer footer footer'
+    ;
+}
+
+/*--------------------------- 
+    header and navigation
+----------------------------*/
+
+.header {
+    background-color: var(---light_neutral);
+    grid-area: header;
+}
+
+.logo_link {
+    background-color: var(---light_neutral);
+    border-radius: 0 0 15% 15%;
+    left: 3%;
+    position: absolute;
+    z-index: 1;
+}
+
+.logo_img {
+    width: 12rem;
+    padding: 10%;
+    z-index: 2;
+}
+
+.navigation {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 3%;
+}
+
+.main_menu {
+    align-items: center;
+    display: flex;
+    font-family: var(---header);
+    margin: 0 3% 0 0;
+}
+
+.menu_item {
+    align-items: center;
+    display: flex;
+    padding: 2% 5%;
+}
+
+.menu_link {
+    font-size: var(---m_font);
+    font-weight: 500;
+}
+
+.arrow {
+    max-width: 20px;
+}
+
+.sog_icon {
+    max-width: 40px;
+}
