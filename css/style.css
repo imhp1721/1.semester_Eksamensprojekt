@@ -45,6 +45,21 @@
 ---m_font: 1.5rem;
 ---s_font: 1rem;
 ---xs_font: .8rem;
+
+/*--- variables for transitions ---*/
+
+---slow_timing: 1s ease;
+---semi_fast_timing: 500ms ease-in-out;
+---fast_timing: 400ms ease-in;
+
+/*--- variables for burgermenu ---*/
+
+---bar_width: 40px;
+---bar_height: 5px;
+---burger_gap: 5px;
+---burger_margin: 3%;
+---burger_height: calc(var(---bar_height) * 3 + var(---burger_gap) * 2);
+---x_bar_width: calc(var(---burger_height) * 1.41421356237);
 }
 
 /*-------------------- 
@@ -98,7 +113,7 @@ body {
 
 .logo_img {
     max-width: 80%;
-    padding: 10%;
+    padding: 5% 10% 10%;
     position: relative;
 }
 
@@ -107,7 +122,7 @@ body {
 .navigation {
     align-items: center;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin: 0 3%;
 }
 
@@ -123,30 +138,36 @@ body {
     width: 100%;
 }
 
-.active_menu {
+.menu_item.active_menu {
     border: 1px solid var(---dark_neutral);
-    border-radius: 1em;
+    border-radius: .5em;
+    margin: 1%;
+    padding: 1%
 }
 
 .menu_item {
     align-items: center;
     display: flex;
     padding: 2%;
-    transition: background-color 1s;
+    transition: background-color var(---slow_timing);
 }
 
 .arrow {
     max-width: 10px;
+    padding-left: 10px;
     transform: rotate(0);
-    transition: transform 400ms ease-in;
+    transition: transform var(---fast_timing);
 }
 
-/*--- hide checkboxes ---*/
+/*--- hide checkboxes, not search field ---*/
 
-.menu_item input,
-.sog input {
-    appearance: none;
+.menu_item input {
+    display: none;
     pointer-events: none;
+}
+
+.sog_box input {
+    display: block;
 }
 
 /*--- sub menus ---*/
@@ -163,7 +184,7 @@ body {
     position: absolute;
     top: 0;
     transform: translateY(-110%);
-    transition: transform 400ms ease-in, opacity 500ms ease-in-out;
+    transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
     width: 100%;
 }
 
@@ -175,6 +196,8 @@ body {
 
 .sog_icon {
     max-width: 25px;
+    padding: 40%;
+    position: relative;
 }
 
 .sog_box {
@@ -187,7 +210,7 @@ body {
     right: 0;
     top: 0;
     transform: translateY(-110%);
-    transition: transform 400ms ease-in, opacity 500ms ease-in-out;
+    transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
     width: 100%;
 }
 
@@ -200,24 +223,29 @@ body {
     width: 75%;
 }
 
+/*--- hide burgermenu on large screens ---*/
+
+.menu_item:has(.burgermenu) {
+    display: none;
+}
+
 /*--- transitions and other effects ---*/
 
 .sub_arrow:has(input:checked) + .sub_menu,
 .sog:has(input:checked) + .sog_box {
     opacity: 1;
-    transform: translateY(110%);
-    transition: transform 400ms ease-in, opacity 500ms ease-in-out;
+    transform: translateY(125%);
+    transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
 }
 
 .sub_arrow:has(input:checked) > .arrow {
     transform: rotate(90deg);
-    transition: transform 400ms ease-in;
+    transition: transform var(---fast_timing);
 }
 
-.menu_item:has(.sub_arrow input:checked),
-.menu_item:has(.sog input:checked) {
+.menu_item:has(.sub_arrow input:checked) {
     background-color: var(---color_bg);
-    transition: background-color 1s;
+    transition: background-color var(---slow_timing);
 }
 
 .logo_img:hover,
@@ -236,24 +264,231 @@ body {
 /*--- Styling for smaller screens ---*/
 
 @media (max-width: 668px) {
+
+    /*--- replace grid with flexbox ---*/
+
     .body_grid {
-        grid-gap: 100px 50px;
-        grid-template-rows: repeat(3, auto);
-        grid-template-columns: repeat(1, minmax(100px, 1fr));
-        grid-template-areas: 
-        'hero hero hero'
-        'main_1 main_2 main_3'
-        'footer footer footer'
-        ;
+        display: flex;
     }
 
+    /*--------------------------- 
+        header and navigation
+    ----------------------------*/
+
     .header {
-        bottom: 0;
+        height: 100%;
         position: fixed;
+        top: 20%;
+        z-index: 2;
+    }
+
+    /*--- logo ---*/
+
+    .logo_link {
+        border-radius: 2em 2em 0 0;
+        left: 3%;
+        position: absolute;
+        translate: 0 -40%;
+        width: 30%;
+        z-index: 3;
+    }
+
+    .logo_img {
+        max-width: 80%;
+        padding: 5% 10% 10%;
+        position: relative;
+    }
+
+    /*--- navbar ---*/
+
+    .navigation {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 3%;
+    }
+
+    /*--- main menu ---*/
+
+    .main_menu {
+        align-items: center;
+        display: flex;
+        font-family: var(---header);
+        font-size: var(---m_font);
+        font-weight: 500;
+        justify-content: flex-end;
         width: 100%;
     }
 
-    .menu_item:not(:last-child) {
+    .menu_item.active_menu {
+        border: 1px solid var(---dark_neutral);
+        border-radius: .5em;
+        margin: 1%;
+        padding: 1%
+    }
+
+    .menu_item {
+        align-items: center;
+        display: flex;
+        padding: 2%;
+        transition: background-color var(---slow_timing);
+    }
+
+    .arrow {
+        max-width: 10px;
+        padding-left: 10px;
+        transform: rotate(0);
+        transition: transform var(---fast_timing);
+    }
+
+    /*--- hide checkboxes, not search field ---*/
+
+    .menu_item input {
+        display: none;
+        pointer-events: none;
+    }
+
+    .sog_box input {
+        display: block;
+    }
+
+    /*--- sub menus ---*/
+
+    .sub_menu {
+        background-color: var(---color_bg);
+        display: flex;
+        font-family: var(---header);
+        font-size: var(---m_font);
+        font-weight: 400;
+        left: 0;
+        opacity: 0;
+        padding-left: 25%;
+        position: absolute;
+        top: 0;
+        transform: translateY(-110%);
+        transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
+        width: 100%;
+    }
+
+    .sub_item {
+        padding: 1%;
+    }
+
+    /*--- search icon and search field ---*/
+
+    .sog_icon {
+        max-width: 25px;
+        padding: 40%;
+        position: relative;
+    }
+
+    .sog_box {
+        background-color: var(---color_bg);
+        display: flex;
+        justify-content: flex-end;
+        opacity: 0;
+        padding: 1%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translateY(-110%);
+        transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
+        width: 100%;
+    }
+
+    .sog_felt {
+        background-color: var(---neutral_bg);
+        border: none;
+        color: var(---dark_neutral);
+        font-family: var(---main_txt);
+        font-size: var(---m_font);
+        width: 75%;
+    }
+
+    /*--- hide burgermenu on large screens ---*/
+
+    .menu_item:has(.burgermenu) {
         display: none;
     }
+
+    /*--- transitions and other effects ---*/
+
+    .sub_arrow:has(input:checked) + .sub_menu,
+    .sog:has(input:checked) + .sog_box {
+        opacity: 1;
+        transform: translateY(125%);
+        transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
+    }
+
+    .sub_arrow:has(input:checked) > .arrow {
+        transform: rotate(90deg);
+        transition: transform var(---fast_timing);
+    }
+
+    .menu_item:has(.sub_arrow input:checked) {
+        background-color: var(---color_bg);
+        transition: background-color var(---slow_timing);
+    }
+
+    .logo_img:hover,
+    .menu_link:hover,
+    .sub_arrow:hover,
+    .sog:hover,
+    .sub_item:hover {
+        opacity: .6;
+    }
+
+    .sub_arrow,
+    .sog {
+        cursor: pointer;
+    }
+
+    .menu_item:has(.burgermenu),
+    .burgermenu {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: var(---burger_gap);
+        margin-left: var(---burger_margin);
+        position: absolute;
+        right: var(---burger_margin);
+        width: max-content;
+        z-index: 2;
+    }
+
+    .burgermenu::before,
+    .burgermenu::after,
+    .burgermenu input {
+        background-color: var(---dark_neutral);
+        border-radius: 999px;
+        content: "";
+        height: var(---bar_height);
+        transform-origin: left center;
+        transition: opacity var(---semi_fast_timing), width var(---fast_timing), rotate var(---fast_timing), translate var(---fast_timing);
+        width: var(---bar_width);
+    }
+
+    .burgermenu input {
+        margin: 0;
+        outline: none;
+        pointer-events: none;
+    }
+
+    .burgermenu:has(input:checked)::before {
+        rotate: 45deg;
+        translate: 0 calc(var(---bar_height) / -2);
+        width: var(---x_bar_width);
+    }
+
+    .burgermenu:has(input:checked)::after {
+        rotate: -45deg;
+        translate: 0 calc(var(---bar_height) / 2);
+        width: var(---x_bar_width);
+    }
+
+    .burgermenu input:checked {
+        opacity: 0;
+        width: 0;
+    }
+
 }
