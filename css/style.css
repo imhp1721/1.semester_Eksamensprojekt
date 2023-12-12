@@ -1,65 +1,65 @@
 :root {
 
-/*--- color palette ---*/
+    /*--- color palette ---*/
 
-/* basics */
----neutral_bg: #fffaf2;
----color_bg: #ffd98c;
----light_neutral: #f2e3ce;
----dark_neutral: #262626;
+    /* basics */
+    ---neutral_bg: #fffaf2;
+    ---color_bg: #ffd98c;
+    ---light_neutral: #f2e3ce;
+    ---dark_neutral: #262626;
 
-/* accents */
----light_cool: #e5b6ac;
----mid_cool: #5c81cc;
----dark_cool: #1a1c33;
----light_warm: #e5ac00;
----dark_warm: #ff5e0d;
+    /* accents */
+    ---light_cool: #e5b6ac;
+    ---mid_cool: #5c81cc;
+    ---dark_cool: #1a1c33;
+    ---light_warm: #e5ac00;
+    ---dark_warm: #ff5e0d;
 
-/*--- font families ---*/
+    /*--- font families ---*/
 
----header: all-round-gothic, sans-serif;
-/* font weights: 
-    XLig = 200
-    Book = 400
-    Medium = 500
-    Demi = 600
-    Bold = 700
-*/
+    ---header: all-round-gothic, sans-serif;
+    /* font weights: 
+        XLig = 200
+        Book = 400
+        Medium = 500
+        Demi = 600
+        Bold = 700
+    */
 
----main_txt: como, sans-serif;
-/* font weights: 
-    ExtraLight = 200
-    Light = 300
-    Regular = 400
-    Medium = 500
-    Semibold = 600
-    Bold = 700
-    ExtraBold = 800
-    Heavy = 900
-*/
+    ---main_txt: como, sans-serif;
+    /* font weights: 
+        ExtraLight = 200
+        Light = 300
+        Regular = 400
+        Medium = 500
+        Semibold = 600
+        Bold = 700
+        ExtraBold = 800
+        Heavy = 900
+    */
 
-/*--- font sizes ---*/
+    /*--- font sizes ---*/
 
----xl_font: 2rem;
----l_font: 1.8rem;
----m_font: 1.5rem;
----s_font: 1rem;
----xs_font: .8rem;
+    ---xl_font: 2rem;
+    ---l_font: 1.8rem;
+    ---m_font: 1.5rem;
+    ---s_font: 1rem;
+    ---xs_font: .8rem;
 
-/*--- variables for transitions ---*/
+    /*--- variables for transitions ---*/
 
----slow_timing: 1s ease;
----semi_fast_timing: 500ms ease-in-out;
----fast_timing: 400ms ease-in;
+    ---slow_timing: 900ms ease-in-out;
+    ---semi_fast_timing: 500ms ease-in-out;
+    ---fast_timing: 300ms ease-in-out;
 
-/*--- variables for burgermenu ---*/
+    /*--- variables for burgermenu ---*/
 
----bar_width: 40px;
----bar_height: 5px;
----burger_gap: 5px;
----burger_margin: calc(var(---bar_width) / 4);
----burger_height: calc(var(---bar_height) * 3 + var(---burger_gap) * 2);
----x_bar_width: calc(var(---burger_height) * 1.41421356237);
+    ---bar_width: 45px;
+    ---bar_height: 6px;
+    ---burger_gap: 6px;
+    ---burger_margin: calc(var(---bar_width) / 4);
+    ---burger_height: calc(var(---bar_height) * 3 + var(---burger_gap) * 2);
+    ---x_bar_width: calc(var(---burger_height) * 1.41421356237);
 }
 
 /*-------------------- 
@@ -149,7 +149,7 @@ body {
     align-items: center;
     display: flex;
     padding: 2%;
-    transition: background-color var(---slow_timing);
+    transition: background-color var(---semi_fast_timing);
 }
 
 .arrow {
@@ -157,15 +157,6 @@ body {
     margin-left: 10px;
     transform: rotate(0);
     transition: transform var(---fast_timing);
-}
-
-/*--- hide checkboxes ---*/
-
-.menu_item input,
-.sog > input,
-.burgermenu input {
-    display: none;
-    pointer-events: none;
 }
 
 /*--- sub menus ---*/
@@ -182,7 +173,7 @@ body {
     position: absolute;
     top: 0;
     transform: translateY(-110%);
-    transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
+    transition: transform var(---fast_timing), opacity var(---fast_timing);
     width: 100%;
 }
 
@@ -196,10 +187,6 @@ body {
     align-items: center;
     justify-content: flex-end;
     width: 5%;
-}
-
-.menu_icon {
-    height: max-content;
 }
 
 .sog_icon {
@@ -218,7 +205,7 @@ body {
     right: 0;
     top: 0;
     transform: translateY(-110%);
-    transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
+    transition: transform var(---fast_timing), opacity var(---fast_timing);
     width: 100%;
 }
 
@@ -231,18 +218,27 @@ body {
     width: 75%;
 }
 
+/*--- hide checkboxes ---*/
+
+.menu_item input,
+.sog > input,
+.burgermenu input {
+    display: none;
+    pointer-events: none;
+}
+
 /*--- transitions and other effects ---*/
 
 .sub_arrow:has(input:checked) + .sub_menu,
 .sog:has(input:checked) + .sog_box {
     opacity: 1;
     transform: translateY(125%);
-    transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
+    transition: transform var(---semi_fast_timing), opacity var(---semi_fast_timing);
 }
 
 .sub_arrow:has(input:checked) > .arrow {
     transform: rotate(90deg);
-    transition: transform var(---fast_timing);
+    transition: transform var(---semi_fast_timing);
 }
 
 .menu_item:has(.sub_arrow input:checked) {
@@ -282,9 +278,11 @@ body {
     ----------------------------*/
 
     .header {
-        height: 100%;
+        bottom: 0;
+        height: 90%;
         position: fixed;
-        top: 20%;
+        translate: 0 90%;
+        transition: translate var(---slow_timing);
         width: 100%;
         z-index: 2;
     }
@@ -295,7 +293,6 @@ body {
         border-radius: 1.5em 1.5em 0 0;
         translate: 0 -35%;
         width: 40%;
-        z-index: 3;
     }
 
     .logo_img {
@@ -306,7 +303,6 @@ body {
 
     .navigation {
         align-items: flex-end;
-        display: flex;
         flex-direction: column-reverse;
         margin: 0 5%;
         max-width: 100%;
@@ -329,25 +325,16 @@ body {
     }
 
     .menu_item {
-        align-items: center;
         justify-content: space-between;
         width: 100%;
-    }
-
-    .arrow {
-        max-width: 10px;
-        margin-left: 10px;
     }
 
     /*--- sub menus ---*/
 
     .sub_menu {
         flex-direction: column;
-        opacity: 0;
         pointer-events: none;
-        position: absolute;
         top: 30%;
-        width: 100%;
         transform: translateY(0);
         transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
         z-index: 9;
@@ -360,10 +347,8 @@ body {
     /*--- search icon, search field and burgermenu ---*/
 
     .nav_icons {
-        align-items: center;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
         width: 70%;
     }
 
@@ -371,31 +356,22 @@ body {
         padding: 5%;
     }
 
+    .menu_icon:last-child {
+        padding-right: 0;
+    }
+
     .sog_icon {
-        max-width: 25px;
-        position: relative;
+        max-width: 30px;
     }
 
     .sog_box {
-        display: flex;
-        justify-content: flex-end;
-        opacity: 0;
-        padding: 1%;
-        position: absolute;
         left: 0;
         pointer-events: none;
-        top: 0;
         transform: translateY(0);
-        transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
-        width: 100%;
         z-index: -1;
     }
 
     .sog_felt {
-        background-color: var(---neutral_bg);
-        border: none;
-        color: var(---dark_neutral);
-        font-family: var(---main_txt);
         font-size: var(---s_font);
         margin-right: 3%;
         width: 52%;
@@ -420,7 +396,7 @@ body {
         content: "";
         height: var(---bar_height);
         transform-origin: left center;
-        transition: opacity var(---semi_fast_timing), width var(---fast_timing), rotate var(---fast_timing), translate var(---fast_timing);
+        transition: opacity var(---semi_fast_timing), width var(---semi_fast_timing), rotate var(---slow_timing), translate var(---semi_fast_timing);
         width: var(---bar_width);
     }
 
@@ -443,28 +419,16 @@ body {
     }
 
     .sub_arrow:has(input:checked) + .sub_menu {
-        opacity: 1;
         pointer-events: all;
         transform: translateY(0);
         transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
     }
 
     .sog:has(input:checked) + .sog_box {
-        opacity: 1;
         pointer-events: all;
         transform: translateY(-100%);
         transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
         z-index: 1;
-    }
-
-    .sub_arrow:has(input:checked) > .arrow {
-        transform: rotate(90deg);
-        transition: transform var(---fast_timing);
-    }
-
-    .menu_item:has(.sub_arrow input:checked) {
-        background-color: var(---color_bg);
-        transition: background-color var(---slow_timing);
     }
 
     .burgermenu:has(input:checked)::before {
@@ -481,7 +445,13 @@ body {
 
     .burgermenu input:checked {
         opacity: 0;
+        transition: opacity var(---semi_fast_timing), width var(---semi_fast_timing);
         width: 0;
+    }
+
+    .header:has(.burgermenu input:checked) {
+        translate: 0 0;
+        transition: translate var(---slow_timing);
     }
 
 }
