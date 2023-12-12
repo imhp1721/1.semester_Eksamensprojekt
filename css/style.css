@@ -85,10 +85,6 @@ body {
     ;
 }
 
-/*------ text elements --------*/
-
-
-
 /*--------------------------- 
     header and navigation
 ----------------------------*/
@@ -263,9 +259,7 @@ body {
     Styling for smaller screens 
 -------------------------------------*/
 
-/* adjustments for mobile devices */
-
-@media (max-width: 668px) {
+@media (max-width: 800px) {
 
     /*--- replace grid with flexbox ---*/
 
@@ -284,7 +278,6 @@ body {
         translate: 0 90%;
         transition: translate var(---slow_timing);
         width: 100%;
-        z-index: 2;
     }
 
     /*--- logo ---*/
@@ -333,16 +326,19 @@ body {
     /*--- sub menus ---*/
 
     .sub_menu {
+        align-items: flex-start;
         flex-direction: column;
+        justify-content: flex-start;
         padding-left: 0;
         pointer-events: none;
-        top: 100%;
+        transform: translateY(0);
+        top: 0;
         z-index: 9;
-        
     }
 
     .sub_item {
         padding: 2%;
+        width: 100%;
     }
 
     /*--- navigation icons ---*/
@@ -371,7 +367,6 @@ body {
         left: 0;
         pointer-events: none;
         transform: translateY(0);
-        z-index: -1;
     }
 
     .sog_felt {
@@ -445,7 +440,6 @@ body {
     .sog:has(input:checked) + .sog_box {
         pointer-events: all;
         transform: translateY(-100%);
-        transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
         z-index: 1;
     }
 
@@ -463,7 +457,12 @@ body {
 
     .sub_arrow:has(input:checked) + .sub_menu {
         pointer-events: all;
-        transform: translateY(100%);
+        transform: translateY(95%);
+    }
+
+    .sub_arrow:has(input:checked) + .om_sub {
+        pointer-events: all;
+        transform: translateY(30%);
     }
 
 }
