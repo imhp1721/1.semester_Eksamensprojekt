@@ -311,7 +311,7 @@ body {
     /*--- main menu ---*/
 
     .main_menu {
-        align-items: flex-start;
+        align-self: flex-start;
         flex-direction: column;
         justify-content: center;
         margin: 10% auto;
@@ -326,6 +326,7 @@ body {
 
     .menu_item {
         justify-content: space-between;
+        position: relative;
         width: 100%;
     }
 
@@ -333,18 +334,18 @@ body {
 
     .sub_menu {
         flex-direction: column;
+        padding-left: 0;
         pointer-events: none;
-        top: 30%;
-        transform: translateY(0);
-        transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
+        top: 100%;
         z-index: 9;
+        
     }
 
     .sub_item {
         padding: 2%;
     }
 
-    /*--- search icon, search field and burgermenu ---*/
+    /*--- navigation icons ---*/
 
     .nav_icons {
         display: flex;
@@ -359,6 +360,8 @@ body {
     .menu_icon:last-child {
         padding-right: 0;
     }
+
+    /*--- search ---*/
 
     .sog_icon {
         max-width: 30px;
@@ -376,6 +379,8 @@ body {
         margin-right: 3%;
         width: 52%;
     }
+
+    /*--- burgermenu ---*/
 
     .burgermenu {
         box-sizing: border-box;
@@ -410,26 +415,12 @@ body {
 
     /*--- transitions and other effects ---*/
 
-    .logo_img:hover,
-    .menu_link:hover,
-    .sub_arrow:hover,
-    .sog:hover,
-    .sub_item:hover {
-        opacity: 1;
+    .header:has(.burgermenu input:checked) {
+        translate: 0 0;
+        transition: translate var(---slow_timing);
     }
 
-    .sub_arrow:has(input:checked) + .sub_menu {
-        pointer-events: all;
-        transform: translateY(0);
-        transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
-    }
-
-    .sog:has(input:checked) + .sog_box {
-        pointer-events: all;
-        transform: translateY(-100%);
-        transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
-        z-index: 1;
-    }
+    /* burgermenu */
 
     .burgermenu:has(input:checked)::before {
         rotate: 45deg;
@@ -449,9 +440,30 @@ body {
         width: 0;
     }
 
-    .header:has(.burgermenu input:checked) {
-        translate: 0 0;
-        transition: translate var(---slow_timing);
+    /* search bar */
+
+    .sog:has(input:checked) + .sog_box {
+        pointer-events: all;
+        transform: translateY(-100%);
+        transition: transform var(---fast_timing), opacity var(---semi_fast_timing);
+        z-index: 1;
+    }
+
+    /* remove hover effects */
+
+    .logo_img:hover,
+    .menu_link:hover,
+    .sub_arrow:hover,
+    .sog:hover,
+    .sub_item:hover {
+        opacity: 1;
+    }
+
+    /* sub menus */
+
+    .sub_arrow:has(input:checked) + .sub_menu {
+        pointer-events: all;
+        transform: translateY(100%);
     }
 
 }
