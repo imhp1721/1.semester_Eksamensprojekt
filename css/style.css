@@ -40,11 +40,9 @@
 
     /*--- font sizes ---*/
 
-    ---xl_font: 2rem;
-    ---l_font: 1.8rem;
-    ---m_font: 1.5rem;
-    ---s_font: 1rem;
-    ---xs_font: .8rem;
+    ---l_font: clamp(20px, 1.8rem + 24px, 30px);
+    ---m_font: clamp(18px, 1.5rem + 20px, 24px);
+    ---s_font: clamp(16px, 1.2rem + 18px, 22px);
 
     /*--- variables for transitions ---*/
 
@@ -83,6 +81,51 @@ body {
     'main_1 main_2 main_3'
     'footer footer footer'
     ;
+}
+
+/*--- call-to-action button ---*/
+.cta_btn {
+    background-color: var(---mid_cool);
+    border: 1px solid var(---dark_neutral);
+    border-radius: .6em;
+    color: var(---dark_neutral);
+    font-family: var(---header);
+    font-size: var(---s_font);
+    font-weight: 400;
+    margin: 5% 0 0;
+    padding: 2% 5%;
+    text-transform: uppercase;
+}
+
+.cta_btn:hover {
+    background-color: var(---dark_warm);
+}
+
+/*--- text elements ---*/
+
+.head_6 {
+    color: var(---dark_neutral);
+    font-family: var(---header);
+    font-size: var(---s_font);
+    font-weight: 800;
+    padding: 5% 0;
+}
+
+.main_txt {
+    color: var(---dark_neutral);
+    font-family: var(---main_txt);
+    font-size: var(---s_font);
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+.foot_txt {
+    color: var(---dark_neutral);
+    font-family: var(---main_txt);
+    font-size: var(---s_font);
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: 2% 0;
 }
 
 /*--------------------------- 
@@ -255,8 +298,80 @@ body {
     cursor: pointer;
 }
 
+/*--------------------------- 
+    footer
+----------------------------*/
+
+.footer {
+    background-color: var(---color_bg);
+    border-top: 1px solid var(---dark_neutral);
+    display: flex;
+    grid-area: footer;
+    justify-content: space-between;
+    padding: 5% 3% 8%;
+    position: relative;
+}
+
+/*--- go to top of page ---*/
+
+.tiltop {
+    align-items: center;
+    background-color: var(---color_bg);
+    border: 1px solid var(---dark_neutral);
+    border-radius: 1em;
+    bottom: 105%;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    position: absolute;
+    right: 3%;
+    width: 60px;
+}
+
+.tiltop_img {
+    max-width: 50px;
+    padding: 20%;
+    position: relative;
+    rotate: -90deg;
+    width: 35%;
+}
+
+/*--- actual footer ---*/
+
+.foot_om {
+    text-align: left;
+    width: 25%;
+}
+
+.foot_some {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 25%;
+}
+
+.some_img {
+    box-sizing: border-box;
+    height: fit-content;
+    padding: 5% 10% 10%;
+    max-width: 50%;
+}
+
+.foot_kontakt {
+    text-align: right;
+    width: 25%;
+}
+
+.copy_txt {
+    bottom: -10%;
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
 /*-----------------------------------
-    Styling for smaller screens 
+    styling for smaller screens 
 -------------------------------------*/
 
 @media (max-width: 800px) {
