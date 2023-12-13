@@ -40,11 +40,11 @@
 
     /*--- font sizes ---*/
 
-    ---xl_font: clamp(18px, 1.8rem + 22px, 28px);
-    ---l_font: clamp(16px, 1.5rem + 20px, 26px);
-    ---m_font: clamp(14px, 1.4rem + 18px, 24px);
-    ---s_font: clamp(12px, 1rem + 16px, 22px);
-    ---xs_font: clamp(10px, .8rem + 14px, 20px);
+    ---xl_font: 1.8rem;
+    ---l_font: 1.5rem;
+    ---m_font: 1.4rem;
+    ---s_font: 1.2rem;
+    ---xs_font: 1rem;
 
     /*--- variables for transitions ---*/
 
@@ -70,6 +70,7 @@ body {
     background-color: var(---neutral_bg);
     color: var(---dark_neutral);
     font-family: var(---main_txt);
+    overflow-x: hidden;
 }
 
 .body_grid {
@@ -369,7 +370,7 @@ body {
     display: block;
     position: absolute;
     text-align: center;
-    width: 100%;
+    width: 100vw;
 }
 
 /*-----------------------------------
@@ -377,6 +378,17 @@ body {
 -------------------------------------*/
 
 @media (max-width: 800px) {
+
+    :root {
+        /*--- font sizes ---*/
+
+        ---xl_font: 1.6rem;
+        ---l_font: 1.4rem;
+        ---m_font: 1.2rem;
+        ---s_font: 1rem;
+        ---xs_font: .8rem;
+    }
+    
 
     /*--- remove grid ---*/
 
@@ -425,7 +437,7 @@ body {
         background-color: var(---light_neutral);
         box-sizing: border-box;
         flex-direction: column;
-        height: 70vh;
+        height: 60vh;
         justify-content: flex-start;
         margin: 0;
         padding: 10%;
@@ -590,6 +602,52 @@ body {
     .sub_arrow:has(input:checked) + .om_sub {
         pointer-events: all;
         transform: translateY(30%);
+    }
+
+    /*--------------------------- 
+        footer
+    ----------------------------*/
+
+    .footer {
+        padding: 5vh 3vw 15vh;
+    }
+
+    /*--- hide #top-arrow ---*/
+
+    .tiltop {
+        display: none;
+    }
+    
+    /*--- actual footer ---*/
+    
+    .foot_om {
+        display: none;
+    }
+    
+    .foot_some {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 35%;
+    }
+    
+    .some_img {
+        box-sizing: border-box;
+        height: fit-content;
+        padding: 5% 10% 10%;
+        max-width: 50%;
+    }
+    
+    .foot_kontakt {
+        width: 65%;
+    }
+    
+    .copy_txt {
+        bottom: 10vh;
+        font-size: var(---xs_font);
+        position: relative;
+        right: 3vw;
+        text-align: right;
     }
 
     }
