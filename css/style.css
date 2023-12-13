@@ -40,9 +40,11 @@
 
     /*--- font sizes ---*/
 
-    ---l_font: clamp(20px, 1.8rem + 24px, 30px);
-    ---m_font: clamp(18px, 1.5rem + 20px, 24px);
-    ---s_font: clamp(16px, 1.2rem + 18px, 22px);
+    ---xl_font: clamp(18px, 1.8rem + 22px, 28px);
+    ---l_font: clamp(16px, 1.5rem + 20px, 26px);
+    ---m_font: clamp(14px, 1.4rem + 18px, 24px);
+    ---s_font: clamp(12px, 1rem + 16px, 22px);
+    ---xs_font: clamp(10px, .8rem + 14px, 20px);
 
     /*--- variables for transitions ---*/
 
@@ -116,7 +118,7 @@ body {
     font-family: var(---main_txt);
     font-size: var(---s_font);
     font-weight: 500;
-    line-height: 2rem;
+    line-height: 1.5rem;
 }
 
 .foot_txt {
@@ -143,10 +145,10 @@ body {
 .logo_link {
     background-color: var(---light_neutral);
     border-radius: 0 0 2em 2em;
-    left: 3%;
+    left: 3vw;
     max-width: 200px;
     position: absolute;
-    width: 20%;
+    width: 20vw;
     z-index: 3;
 }
 
@@ -162,7 +164,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: flex-end;
-    margin: 0 3%;
+    margin: 0 3vw;
 }
 
 /*--- main menu ---*/
@@ -213,7 +215,7 @@ body {
     top: 0;
     transform: translateY(-110%);
     transition: transform var(---fast_timing), opacity var(---fast_timing);
-    width: 100%;
+    width: 100vw;
 }
 
 .sub_item {
@@ -245,7 +247,7 @@ body {
     top: 0;
     transform: translateY(-110%);
     transition: transform var(---fast_timing), opacity var(---fast_timing);
-    width: 100%;
+    width: 100vw;
 }
 
 .sog_felt {
@@ -308,7 +310,7 @@ body {
     display: flex;
     grid-area: footer;
     justify-content: space-between;
-    padding: 5% 3% 8%;
+    padding: 5vh 3vw 8vh;
     position: relative;
 }
 
@@ -324,7 +326,7 @@ body {
     height: 60px;
     justify-content: center;
     position: absolute;
-    right: 3%;
+    right: 3vw;
     width: 60px;
 }
 
@@ -363,7 +365,7 @@ body {
 }
 
 .copy_txt {
-    bottom: -10%;
+    bottom: 3vh;
     display: block;
     position: absolute;
     text-align: center;
@@ -376,10 +378,11 @@ body {
 
 @media (max-width: 800px) {
 
-    /*--- replace grid with flexbox ---*/
+    /*--- remove grid ---*/
 
     .body_grid {
-        display: flex;
+        display: block;
+        overflow-x: hidden;
     }
 
     /*--------------------------- 
@@ -388,11 +391,10 @@ body {
 
     .header {
         bottom: 0;
-        height: 90%;
         position: fixed;
-        translate: 0 90%;
-        transition: translate var(---slow_timing);
-        width: 100%;
+        transform: translate(0 0);
+        width: 100vw;
+        z-index: 999;
     }
 
     /*--- logo ---*/
@@ -400,7 +402,7 @@ body {
     .logo_link {
         border-radius: 1.5em 1.5em 0 0;
         translate: 0 -35%;
-        width: 40%;
+        width: 40vw;
     }
 
     .logo_img {
@@ -412,19 +414,27 @@ body {
     .navigation {
         align-items: flex-end;
         flex-direction: column-reverse;
-        margin: 0 5%;
-        max-width: 100%;
+        margin: 0 5vw;
+        max-width: 100vw;
     }
 
     /*--- main menu ---*/
 
     .main_menu {
-        align-self: flex-start;
+        align-self: center;
+        background-color: var(---light_neutral);
+        box-sizing: border-box;
         flex-direction: column;
-        justify-content: center;
-        margin: 10% auto;
+        height: 70vh;
+        justify-content: flex-start;
+        margin: 0;
+        padding: 10%;
+        position: absolute;
         text-align: left;
-        width: 90%;
+        translate: 120% -100%;
+        transition: translate var(---slow_timing);
+        width: 100vw;
+        z-index: 1;
     }
 
     .menu_item.active_menu {
@@ -444,16 +454,17 @@ body {
         align-items: flex-start;
         flex-direction: column;
         justify-content: flex-start;
-        padding-left: 0;
+        padding-left: 5%;
         pointer-events: none;
         transform: translateY(0);
         top: 0;
+        width: 80vw;
         z-index: 9;
     }
 
     .sub_item {
         padding: 2%;
-        width: 100%;
+        width: 80vw;
     }
 
     /*--- navigation icons ---*/
@@ -462,6 +473,7 @@ body {
         display: flex;
         flex-direction: row;
         width: 70%;
+        z-index: 2;
     }
 
     .menu_icon {
@@ -525,8 +537,8 @@ body {
 
     /*--- transitions and other effects ---*/
 
-    .header:has(.burgermenu input:checked) {
-        translate: 0 0;
+    .header:has(.burgermenu input:checked) .main_menu {
+        translate: 0 -100%;
         transition: translate var(---slow_timing);
     }
 
@@ -554,7 +566,7 @@ body {
 
     .sog:has(input:checked) + .sog_box {
         pointer-events: all;
-        transform: translateY(-100%);
+        transform: translateY(-90%);
         z-index: 1;
     }
 
@@ -580,4 +592,4 @@ body {
         transform: translateY(30%);
     }
 
-}
+    }
