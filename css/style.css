@@ -485,6 +485,14 @@ body {
     "vores bryg" sub page
 ---------------------------*/
 
+.hero_edge {
+    background-color: var(---light_neutral);
+    border-top: 1px solid var(---dark_neutral);
+    border-bottom: 1px solid var(---dark_neutral);
+    height: 20px;
+    width: 100%;
+}
+
 .bryg_txt {
     margin: 0 auto;
     text-align: center;
@@ -542,6 +550,69 @@ body {
 
 .dragens_dyb .cta_btn:hover {
     background-color: var(---light_cool);
+    color: var(---dark_cool);
+}
+
+.pop_up {
+    background-color: transparent;
+    border: none;
+    height: 65vh;
+    padding: 0;
+    width: 75vw;
+}
+
+.pop_up::backdrop {
+    background: #262626;
+    opacity: .8;
+}
+
+.indhold {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.product {
+    left: 0;
+    position: absolute;
+    top: 25%;
+    max-width: 25%;
+    z-index: 1;
+}
+
+.product_img {
+    max-height: 30vh;
+    width: 100%;
+}
+
+.info {
+    max-width: 80%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.info_img {
+    max-height: 55vh;
+    width: 100%;
+}
+
+.pop_up .cta_btn {
+    background-color: var(---dark_cool);
+    border: 2px solid var(---neutral_bg);
+    bottom: 0;
+    color: var(---neutral_bg);
+    cursor: pointer;
+    font-size: var(---xs_font);
+    margin: 0;
+    padding: 1% 2%;
+    position: absolute;
+    right: 0;
+}
+
+.pop_up .cta_btn:hover {
+    background-color: var(---light_cool);
+    border: 2px solid var(---dark_cool);
     color: var(---dark_cool);
 }
 
@@ -697,6 +768,10 @@ body {
 @media (max-width: 1050px) {
     .main_menu .menu_item:first-child {
         display: none;
+    }
+
+    .pop_up {
+        height: 55vh;
     }
 
     .foot_some {
@@ -982,6 +1057,35 @@ body {
         padding: 5% 0;
     }
 
+    .pop_up {
+        height: 70vh;
+        overflow: hidden;
+        width: 60vw;
+    }
+    
+    .product {
+        max-width: 50%;
+        top: 0;
+        z-index: initial;
+    }
+    
+    .info {
+        bottom: 0;
+        max-height: 100%;
+        max-width: 80%;
+        top: auto;
+    }
+
+    .info_img {
+        height: 100%;
+        max-width: 100%;
+    }
+
+    .pop_up .cta_btn {
+        bottom: 2%;
+        right: 10%;
+    }
+
     /*--------------------------- 
         footer
     ----------------------------*/
@@ -1077,6 +1181,30 @@ body {
     .error_main .head_2 {
         line-height: 2rem;
         padding: 10% 0;
+    }
+
+    .pop_up {
+        height: 75vh;
+        width: 75vw;
+    }
+    
+    .indhold {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .product {
+        left: auto;
+    }
+    
+    .info {
+        max-height: 80%;
+        max-width: 100%;
+        right: auto;
+    }
+
+    .pop_up .cta_btn {
+        right: 20%;
     }
 
     .foot_some {
