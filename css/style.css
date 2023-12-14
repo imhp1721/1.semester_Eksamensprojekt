@@ -40,11 +40,11 @@
 
     /*--- font sizes ---*/
 
-    ---xl_font: 1.8rem;
-    ---l_font: 1.5rem;
-    ---m_font: 1.4rem;
-    ---s_font: 1.2rem;
-    ---xs_font: 1rem;
+    ---xl_font: 2rem;
+    ---l_font: 1.8rem;
+    ---m_font: 1.6rem;
+    ---s_font: 1.4rem;
+    ---xs_font: 1.2rem;
 
     /*--- variables for transitions ---*/
 
@@ -292,7 +292,7 @@ body {
     color: var(---dark_neutral);
     font-family: var(---main_txt);
     font-size: var(---m_font);
-    width: 75%;
+    width: 72%;
 }
 
 /*--- hide checkboxes ---*/
@@ -339,6 +339,7 @@ body {
 /*------------------------------- 
     main content - landingpage
 --------------------------------*/
+
 .main {
     display: grid;
     grid-area: 2 / 1 / 4 / 4;
@@ -451,12 +452,17 @@ body {
     border: 1px solid var(---dark_neutral);
     border-radius: 1em;
     bottom: 105%;
+    cursor: pointer;
     display: flex;
     height: 60px;
     justify-content: center;
     position: absolute;
     right: 3vw;
     width: 60px;
+}
+
+.tiltop:hover {
+    background-color: var(---light_warm);
 }
 
 .tiltop_img {
@@ -477,15 +483,21 @@ body {
 .foot_some {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
-    width: 25%;
+    width: 20%;
 }
 
-.some_img {
-    box-sizing: border-box;
+.some_link {
     height: fit-content;
     padding: 5% 10% 10%;
     max-width: 50%;
+}
+
+.some_img {
+    height: fit-content;
+    max-width: 50px;
+    width: 100%;
 }
 
 .foot_kontakt {
@@ -494,28 +506,40 @@ body {
 }
 
 .copy_txt {
-    bottom: 3vh;
+    bottom: 3%;
     display: block;
     position: absolute;
+    right: 3%;
     text-align: center;
-    width: 100vw;
+    width: 94%;
 }
 
-/*-----------------------------------
-    styling for smaller screens 
--------------------------------------*/
+/*------------------------------------------------
+    styling for smaller and extra large screens 
+-------------------------------------------------*/
+
+@media (max-width: 1050px) {
+    .main_menu .menu_item:first-child {
+        display: none;
+    }
+
+    .foot_some {
+        width: 25%;
+    }
+}
+
+/*--- adjustments for tablet and larger mobile devices ---*/
 
 @media (max-width: 800px) {
 
     :root {
-
         /*--- font sizes ---*/
 
-        ---xl_font: 1.4rem;
-        ---l_font: 1.3rem;
-        ---m_font: 1.2rem;
-        ---s_font: 1rem;
-        ---xs_font: .8rem;
+        ---xl_font: 1.8rem;
+        ---l_font: 1.5rem;
+        ---m_font: 1.4rem;
+        ---s_font: 1.2rem;
+        ---xs_font: 1rem;
     }
     
     /*--- remove grid ---*/
@@ -528,18 +552,11 @@ body {
     /*--- text elements ---*/
 
     .head_1 {
-        font-size: var(---xl_font);
-        letter-spacing: .2rem;
+        letter-spacing: .5rem;
     }
 
-    .head_4 {
-        letter-spacing: .1rem;
-        line-height: 1.5rem;
-    }
-
-    .main_txt {
-        font-size: var(---m_font);
-        line-height: 1.2rem;
+    .head_6 {
+        padding: 3% 0 2%;
     }
 
     /*--------------------------- 
@@ -593,6 +610,10 @@ body {
         transition: translate var(---slow_timing);
         width: 100vw;
         z-index: 1;
+    }
+
+    .main_menu .menu_item:first-child {
+        display: flex;
     }
 
     .menu_item.active_menu {
@@ -657,8 +678,8 @@ body {
 
     .sog_felt {
         font-size: var(---s_font);
-        margin-right: 3%;
-        width: 52%;
+        margin-right: 5%;
+        width: 60%;
     }
 
     /*--- burgermenu ---*/
@@ -752,11 +773,13 @@ body {
     }
 
     /*------------------------------- 
-    main content - landingpage
+        main content - landingpage
     --------------------------------*/
+
     .main {
         display: flex;
         flex-direction: column;
+        margin-bottom: 10%;
     }
 
     .intro_txt {
@@ -788,18 +811,19 @@ body {
     ----------------------------*/
 
     .footer {
-        padding: 5vh 3vw 15vh;
+        padding: 5vh 5vw 15vh;
     }
 
     .foot_txt {
-        line-height: 1.2rem;
-        padding: 0;
+        padding: 1% 0;
     }
 
-    /*--- hide #top-arrow ---*/
+    /*--- adjust sizing ---*/
 
     .tiltop {
-        display: none;
+        height: 50px;
+        right: 5vw;
+        width: 50px;
     }
     
     /*--- actual footer ---*/
@@ -811,15 +835,13 @@ body {
     .foot_some {
         display: flex;
         flex-wrap: wrap;
+        justify-content: flex-start;
         text-align: center;
         width: 35%;
     }
-    
-    .some_img {
-        box-sizing: border-box;
-        height: fit-content;
-        padding: 5% 10% 10%;
-        max-width: 50%;
+
+    .some_link {
+        padding: 5% 15% 10% 5%;
     }
     
     .foot_kontakt {
@@ -827,11 +849,163 @@ body {
     }
     
     .copy_txt {
-        bottom: 8vh;
+        bottom: 25%;
         font-size: var(---xs_font);
         position: absolute;
         right: 3vw;
         text-align: right;
     }
 
+}
+
+/*--- adjustments mobile devices ---*/
+
+@media (max-width: 600px) {
+    :root {
+        
+        /*--- font sizes ---*/
+
+        ---xl_font: 1.5rem;
+        ---l_font: 1.4rem;
+        ---m_font: 1.3rem;
     }
+
+    /*--- ensure visiblity ---*/
+
+    .logo_link {
+        translate: 0 -40%;
+        width: 35vw;
+    }
+
+    .sog_felt {
+        margin-right: 5%;
+        width: 55%;
+    }
+
+    /*--- balance spacing ---*/
+
+    .head_1 {
+        letter-spacing: .2rem;
+    }
+
+    .welcome .icon {
+        max-height: 2.5rem;
+        padding: 0 3%;
+    }
+
+    .foot_some {
+        width: 40%;
+    }
+    
+    .foot_kontakt {
+        width: 55%;
+    }
+
+    .foot_txt {
+        padding: 0;
+    }
+
+}
+
+/*--- adjustments small mobile screens ---*/
+
+@media (max-width: 350px) {
+    :root {
+        
+        /*--- font sizes ---*/
+
+        ---xl_font: 1.2rem;
+        ---l_font: 1.1rem;
+        ---m_font: 1.1rem;
+        ---s_font: 1rem;
+        ---xs_font: .8rem;
+    }
+
+    /*--- ensure visiblity ---*/
+
+    .menu_icon:last-child {
+        padding-right: 5%;
+    }
+
+    .sog_felt {
+        margin-right: 10%;
+        width: 50%;
+    }
+
+    /*--- balance spacing ---*/
+
+    .head_1 {
+        letter-spacing: 0;
+    }
+
+    .welcome .icon {
+        max-height: 2rem;
+    }
+
+    .main {
+        padding-bottom: 10%;
+    }
+
+    .foot_txt {
+        font-size: var(---xs_font);
+        padding: 0;
+    }
+
+    .footer {
+        padding: 3vh 5vw 12vh;
+    }
+
+    .foot_some {
+        width: 45%;
+    }
+
+    .some_img {
+        padding: 5% 15% 10% 0%;
+    }
+
+    .foot_kontakt {
+        width: 55%;
+    }
+    
+    .copy_txt {
+        right: 5vw;
+        width: 50%;
+    }
+
+    /*--- adjust sizing ---*/
+
+    .tiltop {
+        height: 40px;
+        right: 5vw;
+        width: 40px;
+    }
+
+}
+
+/*--- adjustments extra large screens ---*/
+
+@media (min-width: 1200px) {
+    :root {
+        /*--- font sizes ---*/
+
+        ---xl_font: 2.4rem;
+        ---l_font: 2rem;
+        ---m_font: 1.8rem;
+        ---s_font: 1.5rem;
+    }
+
+    /*--- balance space and sizes ---*/
+
+    .sog_felt {
+        font-size: var(---s_font);
+        width: 75%;
+    }
+    
+    .foot_some {
+        width: 30%;
+    }
+    
+    .some_img {
+        max-width: 70px;
+    }
+}
