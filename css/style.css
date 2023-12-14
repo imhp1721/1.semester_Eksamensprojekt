@@ -336,9 +336,9 @@ body {
     cursor: pointer;
 }
 
-/*------------------------------- 
-    main content - landingpage
---------------------------------*/
+/*--------------------- 
+    main content
+----------------------*/
 
 .main {
     display: grid;
@@ -355,6 +355,17 @@ body {
     height: fit-content;
     max-width: 100%;
 }
+
+.card_section,
+.error_main {
+    display: grid;
+    grid-area: 3 / 1 / 4 / 4;
+    margin-bottom: 10%;
+}
+
+/*------------------ 
+    landingpage
+-------------------*/
 
 .welcome {
     align-items: center;
@@ -373,12 +384,6 @@ body {
     padding: 0 10% 5%;
     text-align: justify;
     width: 80%;
-}
-
-.card_section {
-    display: grid;
-    grid-area: 3 / 1 / 4 / 4;
-    margin-bottom: 10%;
 }
 
 .cards {
@@ -430,6 +435,52 @@ body {
     background-color: var(---light_cool);
 }
 
+/*-------------------- 
+    404 errorpage
+---------------------*/
+
+.gradient_container {
+    position: relative;
+}
+
+.gradient_container .head_1 {
+    color: var(---neutral_bg);
+    font-size: 3rem;
+    left: 44%;
+    position: absolute;
+    text-shadow: 1px 1px 5px var(---dark_neutral), -1px -1px 5px var(---dark_neutral);
+    top: 40%;
+    z-index: 1;
+}
+
+.gradient {
+    background-image: linear-gradient(to top, var(---neutral_bg), transparent);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.error_main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2% auto 10%;
+    max-width: 65%;
+}
+
+.error_main .head_2 {
+    font-weight: 500;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.error_main .cta_btn {
+    font-weight: 600;
+}
+
 /*--------------------------- 
     footer
 ----------------------------*/
@@ -478,6 +529,10 @@ body {
 .foot_om {
     text-align: left;
     width: 25%;
+}
+
+.foot_om .cta_btn {
+    font-size: var(---xs_font);
 }
 
 .foot_some {
@@ -893,6 +948,16 @@ body {
         padding: 0 3%;
     }
 
+    .gradient_container .head_1 {
+        left: 41%;
+        top: 35%;
+    }
+
+    .error_main .head_2 {
+        line-height: 2rem;
+        padding: 10% 0;
+    }
+
     .foot_some {
         width: 40%;
     }
@@ -944,6 +1009,18 @@ body {
 
     .main {
         padding-bottom: 10%;
+    }
+
+    .gradient_container .head_1 {
+        color: var(---dark_neutral);
+        font-size: 2.5rem;
+        left: 40%;
+        text-shadow: none;
+        top: 150%;
+    }
+
+    .error_main .head_2 {
+        padding: 70% 0 15%;
     }
 
     .foot_txt {
