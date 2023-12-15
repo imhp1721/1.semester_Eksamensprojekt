@@ -71,7 +71,6 @@ body {
     color: var(---dark_neutral);
     font-family: var(---main_txt);
     max-width: 100vw;
-    overflow-x: hidden;
 }
 
 .body_grid {
@@ -238,19 +237,20 @@ body {
 /*--- sub menus ---*/
 
 .sub_menu {
+    align-items: center;
     background-color: var(---color_bg);
     display: flex;
     font-family: var(---header);
     font-size: var(---m_font);
     font-weight: 400;
+    justify-content: center;
     left: 0;
     opacity: 0;
-    padding-left: 25%;
     position: absolute;
     top: 0;
     transform: translateY(-110%);
     transition: transform var(---fast_timing), opacity var(---fast_timing);
-    width: 100vw;
+    width: 100%;
 }
 
 .sub_item {
@@ -290,8 +290,8 @@ body {
     border: none;
     color: var(---dark_neutral);
     font-family: var(---main_txt);
-    font-size: var(---m_font);
-    width: 72%;
+    font-size: var(---s_font);
+    width: 75%;
 }
 
 /*--- hide checkboxes ---*/
@@ -1016,6 +1016,10 @@ body {
     height: fit-content;
     max-width: 50px;
     width: 100%;
+}
+
+.some_img:hover {
+    opacity: .6;
 }
 
 .foot_kontakt {
