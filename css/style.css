@@ -815,14 +815,17 @@ body {
     line-height: 1.8rem;
 }
 
+.card.om .icon {
+    max-width: 25%;
+    position: absolute;
+}
+
 .card.om.left {
     align-items: flex-start;
     margin-right: 6%;
 }
 
 .card.om.left .icon {
-    max-width: 25%;
-    position: absolute;
     right: -3%;
     top: -10%;
 }
@@ -842,13 +845,6 @@ body {
     text-align-last: center;
 }
 
-.card.om.mid .box {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
 .card.om.mid .cta_btn {
     background-color: var(---color_bg);
 }
@@ -863,9 +859,16 @@ body {
     font-weight: 700;
 }
 
-.card.om.mid .icon {
-    max-height: 100%;
-    max-width: 20%;
+.card.om.mid .icon.left {
+    bottom: 7%;
+    left: 3%;
+    max-width: 18%;
+}
+
+.card.om.mid .icon.right {
+    bottom: 7%;
+    right: 3%;
+    max-width: 18%;
 }
 
 .card.om.right {
@@ -876,8 +879,6 @@ body {
 
 .card.om.right .icon {
     left: -3%;
-    max-width: 20%;
-    position: absolute;
     top: -10%;
 }
 
@@ -1423,13 +1424,25 @@ body {
         "om os" sub page
     ---------------------------*/
 
+    .hero_img.om,
+    .card_section.om {
+        display: none;
+    }
+
+    .hero_edge.om {
+        background-color: transparent;
+        border: none;
+        height: 320px;
+    }
+
     .om_top {
         margin: 0 5vw;
         max-width: 90%;
     }
 
     .om_top .intro_txt {
-        width: 55%;
+        padding: 0;
+        width: 100%;
     }
 
     .om_top .head_4 {
@@ -1438,14 +1451,21 @@ body {
     }
 
     .om_img {
-        height: 100%;
-        max-width: 45%;
+        box-sizing: border-box;
+        height: 350px;
+        object-fit: cover;
+        position: absolute;
+        max-width: 100%;
+        top: -3.5%;
+        width: 90%;
     }
 
-    .card_section.om {
-        display: none;
+    .om_img img {
+        border: 20px solid var(---dark_neutral);
+        border-radius: 2rem;
+        box-sizing: border-box;
     }
-
+        
     .owner_section {
         align-items: center;
         flex-direction: column;
@@ -1455,16 +1475,13 @@ body {
     }
 
     .owner_section .head_3 {
-        font-size: var(---l_font);
+        font-size: var(---xl_font);
         font-weight: 600;
-        padding: 3% 0 5%;
+        padding: 5% 0;
     }
 
-    .owner_section .main_txt {
-        font-size: var(---m_font);
-        line-height: 1.8rem;
-        padding: 3% 0;
-        text-align: justify;
+    .owner_section .main_txt {      
+        padding: 5% 0;
         width: 100%;
     }
 
@@ -1489,12 +1506,14 @@ body {
     .big_bro {
         align-items: center;
         flex-direction: row-reverse;
+        padding: 3% 0;
         width: 100%;
     }
 
     .lil_bro {
         align-items: center;
         flex-direction: row;
+        padding: 3% 0;
         width: 100%;
     }
 
@@ -1668,6 +1687,23 @@ body {
         padding: 0;
     }
 
+    /*--------------------------- 
+        "om os" sub page
+    ---------------------------*/
+    
+    .om_top {
+        margin: 0 10vw;
+        max-width: 80%;
+    }
+
+    .om_img {
+        width: 78%;
+    }
+
+    .owner_section {
+        margin: 8% 10vw 5%;
+        max-width: 80%;
+    }
 }
 
 /*--- adjustments small mobile screens ---*/
@@ -1745,6 +1781,39 @@ body {
     
     .pop_up .cta_btn {
         right: 5%;
+    }
+
+    .hero_edge.om {
+        height: 230px;
+    }
+
+    .om_img {
+        height: 250px;
+    }
+
+    .om_img img {
+        border: 10px solid var(---dark_neutral);
+    }
+
+    .om_top .head_4,
+    .owner_section .main_txt {
+        font-size: var(---m_font);
+        letter-spacing: normal;
+        line-height: 1.5rem;
+    }
+
+    .owner_section .head_3 {
+        font-size: var(---l_font);
+        font-weight: 500;
+    }
+
+    .name {
+        max-width: 40%;
+    }
+
+    .portrait {
+        height: 30vw;
+        max-width: 50%;
     }
 
     .foot_txt {
