@@ -92,7 +92,6 @@ body {
     background-color: var(---mid_cool);
     border: 1px solid var(---dark_neutral);
     border-radius: .6em;
-    color: var(---dark_neutral);
     font-family: var(---header);
     font-size: var(---s_font);
     font-weight: 400;
@@ -752,6 +751,199 @@ body {
 }
 
 /*--------------------------- 
+    "om os" sub page
+---------------------------*/
+
+.om_top {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 3vw;
+    max-width: 100%;
+}
+
+.om_top .intro_txt {
+    box-sizing: border-box;
+    padding: 0 5% 0 0;
+    width: 70%;
+}
+
+.om_top .head_4 {
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+.om_img {
+    height: 100%;
+    max-width: 30%;
+}
+
+.om_img img {
+    border: 1px solid var(---dark_neutral);
+    border-radius: 2em;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card_section.om {
+    justify-content: space-between;
+    margin: 10% 3vw 5%;
+}
+
+.cards:has(.om) {
+    box-sizing: border-box;
+    margin: 0;
+    width: 100%;
+}
+
+.card.om {
+    justify-content: space-between;
+    margin: 0;
+    max-height: 100%;
+    max-width: 33vw;
+    position: relative;
+}
+
+.card.om .head_3 {
+    font-size: var(---s_font);
+    font-weight: 600;
+    padding-bottom: 2%;
+}
+
+.card.om .main_txt {
+    line-height: 1.8rem;
+}
+
+.card.om.left {
+    align-items: flex-start;
+    margin-right: 6%;
+}
+
+.card.om.left .icon {
+    max-width: 25%;
+    position: absolute;
+    right: -3%;
+    top: -10%;
+}
+
+.card.om.left .cta_btn:hover {
+    background-color: var(---light_warm);
+    border: 1px solid var(---mid_cool);
+}
+
+.card.om.left .cta_btn:hover > a {
+    color: var(---mid_cool);
+    font-weight: 700;
+}
+
+.card.om.mid {
+    margin: 0 3%;
+    text-align-last: center;
+}
+
+.card.om.mid .box {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card.om.mid .cta_btn {
+    background-color: var(---color_bg);
+}
+
+.card.om.mid .cta_btn:hover {
+    background-color: var(---light_neutral);
+    border: 1px solid var(---light_warm);
+}
+
+.card.om.mid .cta_btn:hover > a {
+    color: var(---light_warm);
+    font-weight: 700;
+}
+
+.card.om.mid .icon {
+    max-height: 100%;
+    max-width: 20%;
+}
+
+.card.om.right {
+    align-items: flex-end;
+    margin-left: 6%;
+    text-align-last: right;
+}
+
+.card.om.right .icon {
+    left: -3%;
+    max-width: 20%;
+    position: absolute;
+    top: -10%;
+}
+
+.card.om.right .cta_btn {
+    background-color: var(---dark_warm);
+}
+
+.card.om.right .cta_btn:hover {
+    background-color: var(---light_cool);
+    border: 1px solid var(---dark_warm);
+}
+
+.card.om.right .cta_btn:hover > a {
+    color: var(---dark_warm);
+    font-weight: 700;
+}
+
+.owner_section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-area: 4 / 1 / 5 / 4;
+    margin: 5% 3vw;
+    max-width: 100%;
+}
+
+.owner_section .head_3 {
+    text-align: center;
+    padding-bottom: 3%;
+    width: 100%;
+}
+
+.owner_section .main_txt {
+    font-size: var(---m_font);
+    line-height: 2rem;
+    text-align: justify;
+    width: 50%;
+}
+
+.name img {
+    box-sizing: border-box;
+    padding: 3%;
+    width: 100%;
+}
+
+.portrait {
+    border: 1px solid var(---dark_neutral);
+    border-radius: 2em;
+    width: 100%;
+}
+
+.big_bro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+}
+
+.lil_bro {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    width: 20%;
+}
+
+/*--------------------------- 
     footer
 ----------------------------*/
 
@@ -1225,6 +1417,85 @@ body {
     .part_2 .cta_btn {
         align-self: flex-end;
         width: fit-content;
+    }
+
+    /*--------------------------- 
+        "om os" sub page
+    ---------------------------*/
+
+    .om_top {
+        margin: 0 5vw;
+        max-width: 90%;
+    }
+
+    .om_top .intro_txt {
+        width: 55%;
+    }
+
+    .om_top .head_4 {
+        font-size: var(---m_font);
+        line-height: 1.8rem;
+    }
+
+    .om_img {
+        height: 100%;
+        max-width: 45%;
+    }
+
+    .card_section.om {
+        display: none;
+    }
+
+    .owner_section {
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: 5% 5vw;
+        max-width: 90%;
+    }
+
+    .owner_section .head_3 {
+        font-size: var(---l_font);
+        font-weight: 600;
+        padding: 3% 0 5%;
+    }
+
+    .owner_section .main_txt {
+        font-size: var(---m_font);
+        line-height: 1.8rem;
+        padding: 3% 0;
+        text-align: justify;
+        width: 100%;
+    }
+
+    .name {
+        max-width: 30%;
+    }
+
+    .name img {
+        box-sizing: border-box;
+        padding: 3%;
+        width: 100%;
+    }
+
+    .portrait {
+        border: 1px solid var(---dark_neutral);
+        border-radius: 2em;
+        height: 25vw;
+        max-width: 40%;
+        object-fit: cover;
+    }
+
+    .big_bro {
+        align-items: center;
+        flex-direction: row-reverse;
+        width: 100%;
+    }
+
+    .lil_bro {
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
     }
 
     /*--------------------------- 
