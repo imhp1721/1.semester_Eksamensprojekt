@@ -87,6 +87,7 @@ body {
 }
 
 /*--- call-to-action button ---*/
+
 .cta_btn {
     background-color: var(---mid_cool);
     border: 1px solid var(---dark_neutral);
@@ -945,6 +946,71 @@ body {
 }
 
 /*--------------------------- 
+    "kontakt" sub page
+---------------------------*/
+
+.hero.kontakt .hero_img {
+    max-height: 45vh;
+    object-fit: cover;
+    width: 100%;
+}
+
+.hero.kontakt .intro_txt {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero.kontakt .intro_txt .cta_btn {
+    padding: 1% 2%;
+}
+
+.sub_main.kontakt {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 10vw;
+    width: 80%;
+}
+
+.sub_main.kontakt form {
+    display: flex;
+    flex-direction: column;
+    font-size: var(---xs_font);
+    justify-content: space-between;
+    margin-bottom: 5%;
+    padding: 3% 0;
+    width: 100%;
+}
+
+.sub_main.kontakt label {
+    padding: 0 0 1% 2%;
+}
+
+.sub_main.kontakt form input,
+.sub_main.kontakt form textarea {
+    background-color: var(---neutral_bg);
+    border: 3px solid var(---dark_neutral);
+    border-radius: .5em;
+    color: var(---dark_neutral) .6;
+    font-family: var(---main_txt);
+    font-size: var(---s_font);
+    font-weight: 500;
+    height: fit-content;
+    line-height: 2rem;
+    margin-bottom: 3%;
+    outline: none;
+    padding: 2%;
+    resize: none;
+}
+
+.sub_main.kontakt form .cta_btn {
+    align-self: center;
+    cursor: pointer;
+    margin: 0;
+    padding: 1% 2%;
+}
+
+/*--------------------------- 
     footer
 ----------------------------*/
 
@@ -1519,6 +1585,20 @@ body {
         flex-direction: row;
         padding: 3% 0;
         width: 100%;
+    }
+
+    /*--------------------------- 
+        "kontakt" sub page
+    ---------------------------*/
+
+    .hero.kontakt .hero_img {
+        max-height: 30vh;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .hero.kontakt .intro_txt {
+        padding: 0 10% 5%;
     }
 
     /*--------------------------- 

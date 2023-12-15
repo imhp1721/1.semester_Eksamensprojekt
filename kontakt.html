@@ -140,7 +140,36 @@
         page main content
     ------------------------------>
 
-    <main>
+    <main class="main">
+        <section class="hero kontakt">
+            <img class="hero_img" src="img/kontakt/hero.jpeg" alt="Der skåles i øl">
+            <div class="hero_edge"></div>
+            <div class="welcome">
+                <h1 class="head_1">Kontakt os</h1>
+            </div>
+            <article class="intro_txt">
+                <h4 class="head_4">
+                    Vi er altid ivrige efter at få feedback og svare på spørgsmål, vores skønne gæster måtte have. Derfor er du mere end velkommen til at kontakte os ved at bruge formularen herunder.
+                    <br>
+                    Hvis du ønsker at booke en rundvisning i vores skønne bar og bryggeri, har vi en separat bookingside til formålet.
+                </h4>
+                <button class="cta_btn">
+                    <a href="booking.html">book rundvisning</a>
+                </button>
+            </article>
+        </section>
+        <section class="sub_main kontakt">
+            <h3 class="head_3">Kontaktformular</h3>
+            <form action="#" name="contactForm" method="post" autocomplete="on">
+                <label for="fullName">dit fulde navn*</label>
+                <input type="text" id="fullName" placeholder="skriv dit fulde navn her" required>
+                <label for="email">din e-mail*</label>
+                <input type="email" id="email" placeholder="skriv din e-mail her" required>
+                <label for="message">din besked*</label>
+                <textarea name="message" id="message" placeholder="skriv din besked her" rows="10"></textarea>
+                <button type="submit" class="cta_btn" onclick="alert('Mange tak! Din besked er nu sendt.')">send besked</button>
+            </form>
+        </section>
     </main>
 
     <!----------------------------
