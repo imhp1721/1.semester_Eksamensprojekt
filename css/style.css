@@ -1043,6 +1043,10 @@ body {
         margin: 0 10% 5%;
     }
 
+    /*------------------- 
+        landingpage
+    --------------------*/
+
     .cards {
         margin: 0;
     }
@@ -1055,6 +1059,28 @@ body {
 
     .card_img {
         padding: 5% 0;
+    }
+
+    /*--------------------------- 
+        "vores bryg" sub page
+    ---------------------------*/
+
+    .card_section:has(.bryg_card) {
+        margin: 5% 5vw 10%;
+    }
+
+    .cards:has(.bryg_card)::after {
+        padding-top: 60%;
+    }
+
+    .bryg_card .card_img {
+        height: 100%;
+        margin: 2% 0 0;
+        padding: 0;
+    }
+
+    .bryg_card .cta_btn {
+        margin: 0 0 2%;
     }
 
     .pop_up {
@@ -1270,6 +1296,32 @@ body {
 
     .error_main .head_2 {
         padding: 70% 0 15%;
+    }
+
+    .cards:has(.bryg_card) {
+        margin: 5vw 2vw;
+    }
+
+    .cards:has(.bryg_card)::after {
+        padding-top: 75%;
+    }
+
+    .bryg_card .card_img {
+        height: 80%;
+        margin: 8% 0 2%;
+    }
+
+    .pop_up {
+        height: 60vh;
+        width: 90vw;
+    }
+    
+    .product {
+        max-width: 80%;
+    }
+    
+    .pop_up .cta_btn {
+        right: 5%;
     }
 
     .foot_txt {
