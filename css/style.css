@@ -357,10 +357,33 @@ body {
 }
 
 .card_section,
-.error_main {
+.sub_main {
     display: grid;
     grid-area: 3 / 1 / 4 / 4;
     margin-bottom: 10%;
+}
+
+.gradient_container {
+    position: relative;
+}
+
+.gradient_container .head_1 {
+    color: var(---neutral_bg);
+    font-size: 3rem;
+    left: 44%;
+    position: absolute;
+    text-shadow: 1px 1px 5px var(---dark_neutral), -1px -1px 5px var(---dark_neutral);
+    top: 40%;
+    z-index: 1;
+}
+
+.gradient {
+    background-image: linear-gradient(to top, var(---neutral_bg), transparent);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
 /*------------------ 
@@ -438,29 +461,6 @@ body {
 /*-------------------- 
     404 errorpage
 ---------------------*/
-
-.gradient_container {
-    position: relative;
-}
-
-.gradient_container .head_1 {
-    color: var(---neutral_bg);
-    font-size: 3rem;
-    left: 44%;
-    position: absolute;
-    text-shadow: 1px 1px 5px var(---dark_neutral), -1px -1px 5px var(---dark_neutral);
-    top: 40%;
-    z-index: 1;
-}
-
-.gradient {
-    background-image: linear-gradient(to top, var(---neutral_bg), transparent);
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
 
 .error_main {
     align-items: center;
@@ -674,6 +674,84 @@ body {
 }
 
 /*--------------------------- 
+    "events" sub page
+---------------------------*/
+
+.hero_img.events {
+    max-height: 30vh;
+    object-fit: cover;
+    width: 100%;
+}
+
+.head_4.events {
+    font-weight: 500;
+}
+
+.events_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 10vw 5%;
+    max-width: 100%;
+    text-align: justify;
+}
+
+.events_content .big,
+.events_content .small {
+    border: 1px solid var(---dark_neutral);
+    border-radius: 2em;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.events_content .main_txt {
+    font-size: var(---m_font);
+    line-height: 2rem;
+    padding: 5% 0;
+}
+
+.part_1 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+
+.part_1 .img {
+    height: 30vw;
+    translate: -5vw 0;
+}
+
+.part_1 .txt {
+    max-width: 55%;
+    padding-top: 2em;
+}
+
+.part_2 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.part_2 .img {
+    height: 25vw;
+    translate: 5vw -10vw;
+}
+
+.part_2 .txt {
+    max-width: 70%;
+}
+
+.part_2 .head_3 {
+    text-align: right;
+}
+
+.events_content .cta_btn {
+    margin: 0;
+    padding: 1% 2%;
+}
+
+/*--------------------------- 
     footer
 ----------------------------*/
 
@@ -772,6 +850,11 @@ body {
 
     .pop_up {
         height: 55vh;
+    }
+
+    .part_2 .img {
+        height: 25vw;
+        translate: 5vw -7vw;
     }
 
     .foot_some {
@@ -1113,6 +1196,38 @@ body {
     }
 
     /*--------------------------- 
+        "events" sub page
+    ---------------------------*/
+
+    .part_1 .img {
+        translate: 0 0;
+    }
+
+    .part_1 .txt {
+        padding-left: 5%;
+    }
+
+    .part_2 .img {
+        translate: 0 0;
+    }
+
+    .part_2 .txt {
+        display: flex;
+        flex-direction: column;
+        max-width: 70%;
+        padding-right: 5%;
+    }
+
+    .part_2 .head_3 {
+        text-align: right;
+    }
+
+    .part_2 .cta_btn {
+        align-self: flex-end;
+        width: fit-content;
+    }
+
+    /*--------------------------- 
         footer
     ----------------------------*/
 
@@ -1233,6 +1348,43 @@ body {
         right: 20%;
     }
 
+    /*--------------------------- 
+        "events" sub page
+    ---------------------------*/
+
+    .head_1.events {
+        font-size: 10vw;
+        left: 30%;
+    }
+
+    .events_content .head_3 {
+        font-size: var(---xl_font);
+        text-align: center;
+    }
+    
+    .events_content .part_1,
+    .events_content .part_2 {
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .part_1 .img,
+    .part_2 .img {
+        margin-bottom: 5%;
+        width: 100%;
+    }
+
+    .part_1 .txt,
+    .part_2 .txt {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .part_2 .cta_btn {
+        align-self: center;
+    }
+
     .foot_some {
         width: 40%;
     }
@@ -1286,7 +1438,7 @@ body {
         padding-bottom: 10%;
     }
 
-    .gradient_container .head_1 {
+    .head_1.error {
         color: var(---dark_neutral);
         font-size: 2.5rem;
         left: 40%;
