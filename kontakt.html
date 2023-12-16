@@ -140,32 +140,34 @@
         page main content
     ------------------------------>
 
-    <main class="main">
-        <section class="hero kontakt">
+    <main class="main kontakt">
+        <section class="hero">
             <img class="hero_img" src="img/kontakt/hero.jpeg" alt="Der skåles i øl">
             <div class="hero_edge"></div>
-            <div class="welcome">
-                <h1 class="head_1">Kontakt os</h1>
-            </div>
-            <article class="intro_txt">
-                <h4 class="head_4">
-                    Vi er altid ivrige efter at få feedback og svare på spørgsmål, vores skønne gæster måtte have. Derfor er du mere end velkommen til at kontakte os ved at bruge formularen herunder.
-                    <br>
-                    Hvis du ønsker at booke en rundvisning i vores skønne bar og bryggeri, har vi en separat bookingside til formålet.
-                </h4>
-                <a class="cta_btn" href="booking.html">book rundvisning</a>
-            </article>
         </section>
-        <section class="sub_main kontakt">
-            <h3 class="head_3">Kontaktformular</h3>
-            <form action="#" name="contactForm" method="post" autocomplete="on">
-                <label for="fullName">dit fulde navn*</label>
-                <input type="text" id="fullName" placeholder="skriv dit fulde navn her" required>
-                <label for="email">din e-mail*</label>
-                <input type="email" id="email" placeholder="skriv din e-mail her" required>
-                <label for="message">din besked*</label>
-                <textarea name="message" id="message" placeholder="skriv din besked her" rows="10"></textarea>
-                <button type="submit" class="cta_btn" onclick="alert('Mange tak! Din besked er nu sendt.')">send besked</button>
+        <article class="intro">
+            <h2 class="head_2">Kontakt os</h2>
+            <p class="intro_txt">
+                Vi er altid ivrige efter at få feedback og svare på spørgsmål, vores skønne gæster måtte have. Derfor er du mere end velkommen til at kontakte os ved at bruge formularen herunder.
+            </p>
+            <p class="intro_txt">
+                Hvis du ønsker at booke en rundvisning i vores skønne bar og bryggeri, har vi en separat bookingside til formålet.
+            </p>
+            <a class="cta_btn" href="booking.html">book rundvisning</a>
+        </article>
+        <section class="content">
+            <h4 class="head_4">Kontaktformular</h4>
+            <form class="contact_form" action="#" name="contactForm" method="post" autocomplete="on">
+                <label class="form_txt" for="fullName">dit fulde navn*</label>
+                <input class="form_box" type="text" id="fullName" placeholder="skriv dit fulde navn her" required>
+                <label class="form_txt" for="email">din e-mail*</label>
+                <input class="form_box" type="email" id="email" placeholder="skriv din e-mail her" required>
+                <label class="form_txt" for="message">din besked*</label>
+                <textarea class="form_box" name="message" id="message" placeholder="skriv din besked her" rows="10"></textarea>
+                <button type="submit" class="cta_btn" 
+                    onclick="alert('Mange tak! Din besked er nu sendt.')">
+                    send besked
+                </button>
             </form>
         </section>
     </main>
@@ -175,12 +177,12 @@
     ------------------------------>
 
     <footer class="footer">
-        <a class="tiltop" href="#top">
-            <img class="tiltop_img" src="img/ikoner/pil.png" alt="Gå til toppen">
+        <a class="top_link" href="#top">
+            <img class="top_img" src="img/ikoner/pil.png" alt="Gå til toppen">
         </a>
         <section class="foot_om">
             <h6 class="head_6">Om os</h6>
-            <p class="foot_txt">Vi udfordrer smagen om tanken om øl. Book en rundvisning, og se hvordan vi brygger morgendagens øl.</p>
+            <p class="txt">Vi udfordrer smagen om tanken om øl. Book en rundvisning, og se hvordan vi brygger morgendagens øl.</p>
             <a class="cta_btn" href="booking.html">book her</a>
         </section>
         <section class="foot_some">
@@ -202,14 +204,14 @@
         </section>
         <section class="foot_kontakt">
             <h6 class="head_6">Kontakt</h6>
-            <p class="foot_txt">TrøjborgBryg Inc.</p>
-            <p class="foot_txt">
+            <p class="txt">TrøjborgBryg Inc.</p>
+            <p class="txt">
                 Tordenskjoldsgade 25
                 <br>
                 8200 Aarhus N
             </p>
-            <p class="foot_txt">info@trøjborgbryg.dk</p>
-            <p class="foot_txt">tlf.: 50403020</p>
+            <p class="txt">info@trøjborgbryg.dk</p>
+            <p class="txt">tlf.: 50403020</p>
         </section>
         <p class="copy_txt">Copyright &#169; TrøjborgBryg Inc.</p>
     </footer>

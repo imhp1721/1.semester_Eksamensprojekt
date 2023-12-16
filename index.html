@@ -52,7 +52,7 @@
                     </label>
                     <ul class="sub_menu">
                         <li class="sub_item">
-                            <a href="vores_bar.html">i vores bar</a>
+                            <a class="menu_link" href="vores_bar.html">i vores bar</a>
                         </li>
                     </ul>
                 </li>
@@ -67,7 +67,7 @@
                     </label>
                     <ul class="sub_menu">
                         <li class="sub_item">
-                            <a href="kalender.html">kalender</a>
+                            <a class="menu_link" href="kalender.html">kalender</a>
                         </li>
                     </ul>
                 </li>
@@ -82,13 +82,13 @@
                     </label>
                     <ul class="sub_menu om_sub">
                         <li class="sub_item">
-                            <a href="historie.html">vores historie</a>
+                            <a class="menu_link" href="historie.html">vores historie</a>
                         </li>
                         <li class="sub_item">
-                            <a href="mission.html">vores mission</a>
+                            <a class="menu_link" href="mission.html">vores mission</a>
                         </li>
                         <li class="sub_item">
-                            <a href="raavarer.html">vores råvarer</a>
+                            <a class="menu_link" href="raavarer.html">vores råvarer</a>
                         </li>
                     </ul>
                 </li>
@@ -103,7 +103,7 @@
                     </label>
                     <ul class="sub_menu">
                         <li class="sub_item">
-                            <a href="booking.html">book rundvisning</a>
+                            <a class="menu_link" href="booking.html">book rundvisning</a>
                         </li>
                     </ul>
                 </li>
@@ -140,12 +140,15 @@
         page main content
     ------------------------------>
 
-    <main class="main">
+    <main class="main index">
         <section class="hero">
-            <img class="hero_img" src="img/forside/hero_1.5.jpg" alt="Ølvarianter" sizes="100vw" srcset="
-                img/forside/hero_0.5.jpg 960w, 
-                img/forside/hero_1.jpg 1920w, 
-                img/forside/hero_1.5.jpg 2880w">
+            <img class="hero_img" src="img/forside/hero_1.5.png" alt="Ølvarianter" sizes="100vw" srcset="
+                img/forside/hero_0.5.png 794w, 
+                img/forside/hero_1.png 1588w, 
+                img/forside/hero_1.5.png 2382w">
+            <div class="hero_edge"></div>
+        </section>
+        <section class="intro">
             <div class="welcome">
                 <img class="icon" src="img/ikoner/olkapsel_2.png" alt="Ølkapsel-ikon" sizes="10vw" srcset="
                     img/ikoner/olkapsel_1.png 65w, 
@@ -155,32 +158,32 @@
                     img/ikoner/oltonde_1.png 50w, 
                     img/ikoner/oltonde_2.png 99w">
             </div>
-            <div class="intro_txt">
-                <h4 class="head_4">Her på Trøjborg&shy;Brygs hjemme&shy;side finder du alt fra vores skønne udvalg af hjemme&shy;bryg, til vores mange events og booking til en rund&shy;visning i vores mikro&shy;bryggeri. Hvis du synes der mangler noget, må du hellere end gerne sende os dine forslag.</h4>
-            </div>
+            <p class="intro_txt">
+                Her på Trøjborg&shy;Brygs hjemme&shy;side finder du alt fra vores skønne udvalg af hjemme&shy;bryg, til vores mange events og booking til en rund&shy;visning i vores mikro&shy;bryggeri. Hvis du synes der mangler noget, må du hellere end gerne sende os dine forslag.
+            </p>
         </section>
-        <section class="card_section">
-            <div class="cards card_1">
-                <h3 class="head_3">Vores udvalg</h3>
+        <section class="content">
+            <div class="card_1">
+                <h5 class="head_5">Vores udvalg</h5>
                 <div class="card left">
-                    <img class="card_img" src="img/forside/udvalg_img.jpg" alt="Ølvarianter på række">
-                    <p class="main_txt">Vi gør en ære i at lave bane&shy;brydende, lækre smags&shy;varianter og dertil laver vi ALLE vores øl både med og uden alkohol.</p>
+                    <img class="img" src="img/forside/udvalg_img.jpg" alt="Ølvarianter på række">
+                    <p class="txt">Vi gør en ære i at lave bane&shy;brydende, lækre smags&shy;varianter og dertil laver vi ALLE vores øl både med og uden alkohol.</p>
                     <a class="cta_btn" href="bryg.html">se udvalg</a>
                 </div>
             </div>
-            <div class="cards card_2">
-                <h3 class="head_3">Ølsmagning</h3>
+            <div class="card_2">
+                <h5 class="head_5">Ølsmagning</h5>
                 <div class="card mid">
-                    <img class="card_img" src="img/forside/olsmagning.jpeg" alt="Ølvarianter i glas">
-                    <p class="main_txt">Vi ved godt at det ikke altid er nemt at prøve en helt ny smag. Derfor har vi en øl&shy;smagning hver måned med et nyt tema!</p>
+                    <img class="img" src="img/forside/olsmagning.jpeg" alt="Ølvarianter i glas">
+                    <p class="txt">Vi ved godt at det ikke altid er nemt at prøve en helt ny smag. Derfor har vi en øl&shy;smagning hver måned med et nyt tema!</p>
                     <a class="cta_btn" href="kalender.html">se datoer</a>
                 </div>
             </div>
-            <div class="cards card_3">
-                <h3 class="head_3">Vores mission</h3>
+            <div class="card_3">
+                <h5 class="head_5">Vores mission</h5>
                 <div class="card right">
-                    <img class="card_img" src="img/forside/mission_img.jpeg" alt="Gæster, der drikker øl">
-                    <p class="main_txt">Vi har et mål om at normalisere alkoholfri øl som alternativ til andre drikkevarer - både alko&shy;holiserede og alkohol&shy;frie.</p>
+                    <img class="img" src="img/forside/mission_img.jpeg" alt="Gæster, der drikker øl">
+                    <p class="txt">Vi har et mål om at normalisere alkoholfri øl som alternativ til andre drikkevarer - både alko&shy;holiserede og alkohol&shy;frie.</p>
                     <a class="cta_btn" href="mission.html">læs mere</a>
                 </div>
             </div>
@@ -192,12 +195,12 @@
     ------------------------------>
 
     <footer class="footer">
-        <a class="tiltop" href="#top">
-            <img class="tiltop_img" src="img/ikoner/pil.png" alt="Gå til toppen">
+        <a class="top_link" href="#top">
+            <img class="top_img" src="img/ikoner/pil.png" alt="Gå til toppen">
         </a>
         <section class="foot_om">
             <h6 class="head_6">Om os</h6>
-            <p class="foot_txt">Vi udfordrer smagen om tanken om øl. Book en rundvisning, og se hvordan vi brygger morgendagens øl.</p>
+            <p class="txt">Vi udfordrer smagen om tanken om øl. Book en rundvisning, og se hvordan vi brygger morgendagens øl.</p>
             <a class="cta_btn" href="booking.html">book her</a>
         </section>
         <section class="foot_some">
@@ -219,14 +222,14 @@
         </section>
         <section class="foot_kontakt">
             <h6 class="head_6">Kontakt</h6>
-            <p class="foot_txt">TrøjborgBryg Inc.</p>
-            <p class="foot_txt">
+            <p class="txt">TrøjborgBryg Inc.</p>
+            <p class="txt">
                 Tordenskjoldsgade 25
                 <br>
                 8200 Aarhus N
             </p>
-            <p class="foot_txt">info@trøjborgbryg.dk</p>
-            <p class="foot_txt">tlf.: 50403020</p>
+            <p class="txt">info@trøjborgbryg.dk</p>
+            <p class="txt">tlf.: 50403020</p>
         </section>
         <p class="copy_txt">Copyright &#169; TrøjborgBryg Inc.</p>
     </footer>
