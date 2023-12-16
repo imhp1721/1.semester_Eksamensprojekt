@@ -62,6 +62,15 @@
     --burger_margin: calc(var(---bar_width) / 4);
     --burger_height: calc(var(---bar_height) * 3 + var(---burger_gap) * 2);
     --x_bar_width: calc(var(---burger_height) * 1.41421356237);
+
+    /*--- variables for call to action button ---*/
+
+    --btn_bg_clr: var(--clr_mid_cool);
+    --btn_border_clr: var(--clr_dark_neutral);
+    --btn_txt_clr: var(--clr_dark_neutral);
+    --btn_hover_bg: var(--clr_dark_warm);
+    --btn_hover_txt: var(--clr_dark_neutral);
+    --btn_hover_border: var(--clr_dark_neutral);
 }
 
 /*-------------------- 
@@ -78,9 +87,10 @@ body {
 /*--- call-to-action button ---*/
 
 .cta_btn {
-    background-color: var(--clr_mid_cool);
-    border: 1px solid var(--clr_dark_neutral);
+    background-color: var(--btn_bg_clr);
+    border: 1px solid var(--btn_border_clr);
     border-radius: .8rem;
+    color: var(--btn_txt_clr);
     font-family: var(--header_font);
     font-size: var(--xs_font_size);
     margin: 1%;
@@ -90,7 +100,9 @@ body {
 
 .cta_btn:hover,
 .cta_btn:focus {
-    background-color: var(--clr_dark_warm);
+    background-color: var(--btn_hover_bg);
+    border: 1px solid var(--btn_hover_border);
+    color: var(--_btn_hover_txt);
 }
 
 /*--- text elements ---*/
@@ -370,7 +382,7 @@ body {
 ----------------------*/
 
 .intro {
-    margin: 0 10%;
+    margin: 5% 10% 0;
 }
 
 /*--------------------- 
@@ -381,12 +393,16 @@ body {
     display: grid;
     gap: 0 3%;
     grid-template-columns: repeat(3, 1fr);
-    margin: 5% 3% 15%;
+    padding: 5% 3% 15%;
+}
+
+.cards .card {
+    --_card_clr: var(--card_clr, var(--clr_dark_neutral));
 }
 
 .card {
     align-items: center;
-    background-color: var(--clr_dark_neutral);
+    background-color: var(--_card_clr);
     border: 2px solid var(--clr_dark_neutral);
     border-radius: 2em;
     display: flex;
@@ -397,16 +413,18 @@ body {
     padding: 10%;
 }
 
+/* set card colors for index and "om" sub page */
+
 .card.left {
-    background-color: var(--clr_mid_warm);
+    --card_clr: var(--clr_mid_warm);
 }
 
 .card.mid {
-    background-color: var(--clr_mid_neutral);
+    --card_clr: var(--clr_mid_neutral);
 }
 
 .card.right {
-    background-color: var(--clr_light_cool);
+    --card_clr: var(--clr_light_cool);
 }
 
 /*------------------ 
@@ -431,94 +449,26 @@ body {
     padding: 0 5%;
 }
 
-/*-------------------- 
-    404 errorpage
----------------------*/
-
-.error_main {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 2% auto 10%;
-    max-width: 65%;
-}
-
-.error_main .head_2 {
-    font-weight: 500;
-    line-height: 3rem;
-    text-align: center;
-}
-
-.error_main .cta_btn {
-    font-weight: 600;
-}
-
 /*--------------------------- 
     "vores bryg" sub page
 ---------------------------*/
 
-.bryg_txt {
-    margin: 0 auto;
-    text-align: center;
-    width: 80%;
+.bryg .content {
+    gap: 5% 3%;
 }
 
-.card_section:has(.bryg_card) {
-    margin: 5% 1vw 15%;
-}
-
-.cards:has(.bryg_card) {
-    max-width: 100%;
-    margin: 2vw;
-    position: relative;
-}
-
-.cards:has(.bryg_card)::after {
-    content: '';
-    display: block;
-    padding-top: 100%;
-}
-
-.bryg_card {
-    align-items: center;
-    background-color: var(---dark_neutral);
-    border: 2px solid var(---dark_neutral);
-    border-radius: 2em;
-    display: flex;
-    flex-direction: column;
+.bryg .card {
     height: 100%;
-    justify-content: center;
-    position: absolute;
-    width: 100%;
+    margin: 0;
+    padding: 5% 0 5%;
 }
 
-.bryg_card .card_img {
-    height: 65%;
-    margin: 5% 0 0;
+.beerlabel {
+    height: 20vw;
     object-fit: cover;
 }
 
-.bryg_card .cta_btn {
-    font-size: var(---xs_font);
-    font-weight: 500;
-    margin: 2% 0 0;
-    padding: 1% 6%;
-    text-transform: uppercase;
-}
-
-.dragens_dyb .cta_btn {
-    background-color: var(---dark_cool);
-    color: var(---neutral_bg);
-    cursor: pointer;
-}
-
-.dragens_dyb .cta_btn:hover {
-    background-color: var(---light_cool);
-    color: var(---dark_cool);
-}
-
-.pop_up {
+.pop_up_box {
     background-color: transparent;
     border: none;
     height: 65vh;
@@ -526,12 +476,12 @@ body {
     width: 75vw;
 }
 
-.pop_up::backdrop {
+.pop_up_box::backdrop {
     background: #262626;
     opacity: .8;
 }
 
-.indhold {
+.pop_up {
     height: 100%;
     position: absolute;
     width: 100%;
@@ -562,11 +512,11 @@ body {
     width: 100%;
 }
 
-.pop_up .cta_btn {
-    background-color: var(---dark_cool);
-    border: 2px solid var(---neutral_bg);
+.pop_up_box .cta_btn {
+    background-color: var(--btn_bg_clr);
+    border: 2px solid var(--btn_border_clr);
     bottom: 0;
-    color: var(---neutral_bg);
+    color: var(--btn_txt_clr);
     cursor: pointer;
     font-size: var(---xs_font);
     margin: 0;
@@ -575,67 +525,46 @@ body {
     right: 0;
 }
 
-.pop_up .cta_btn:hover {
-    background-color: var(---light_cool);
-    border: 2px solid var(---dark_cool);
-    color: var(---dark_cool);
+.pop_up_box .cta_btn:hover {
+    background-color: var(--btn_hover_bg);
+    border: 2px solid var(--btn_hover_border);
+    color: var(--btn_hover_txt);
 }
 
-.himmelflugt .cta_btn:hover {
-    background-color: var(---neutral_bg);
-    cursor: pointer;
+.dragens_dyb {
+    --btn_bg_clr: var(--clr_dark_cool);
+    --btn_border_clr: var(--clr_light_neutral);
+    --btn_txt_clr: var(--clr_light_neutral);
+    --btn_hover_bg: var(--clr_light_cool);
+    --btn_hover_txt: var(--clr_dark_cool);
 }
 
-.solnedgang .cta_btn {
-    background-color: var(---dark_warm);
-    cursor: pointer;
+.himmelflugt {
+    --btn_hover_bg: var(--clr_light_neutral);
 }
 
-.solnedgang .cta_btn:hover {
-    background-color: var(---dark_neutral);
-    border: 1px solid var(---dark_warm);
-    color: var(---dark_warm);
+.solnedgang {
+    --btn_bg_clr: var(--clr_dark_warm);
+    --btn_hover_bg: var(--clr_dark_neutral);
+    --btn_hover_border: var(--clr_dark_warm);
+    --btn_hover_txt: var(--clr_dark_warm);
 }
 
-.card_4 {
-    grid-area: 4 / 1 / 5 / 2;
+.syrlig_sommer {
+    --btn_bg_clr: var(--clr_light_warm);
+    --btn_hover_bg: var(--clr_mid_warm);
 }
 
-.syrlig_sommer .cta_btn {
-    background-color: var(---color_bg);
-    cursor: pointer;
+.tropiske_rodder {
+    --btn_bg_clr: var(--clr_mid_warm);
+    --btn_hover_bg: var(--clr_light_warm);
 }
 
-.syrlig_sommer .cta_btn:hover {
-    background-color: var(---light_warm);
-}
-
-.card_5 {
-    grid-area: 4 / 2 / 5 / 3;
-}
-
-.tropiske_rødder .cta_btn {
-    background-color: var(---light_warm);
-    cursor: pointer;
-}
-
-.tropiske_rødder .cta_btn:hover {
-    background-color: var(---color_bg);
-}
-
-.card_6 {
-    grid-area: 4 / 3 / 5 / 4;
-}
-
-.ubaerlig_sodme .cta_btn {
-    background-color: var(---light_cool);
-    cursor: pointer;
-}
-
-.ubaerlig_sodme .cta_btn:hover {
-    background-color: var(---dark_warm);
-    border: 1px solid var(---light_cool);
-    color: var(---neutral_bg);
+.ubaerlig_sodme {
+    --btn_bg_clr: var(--clr_light_cool);
+    --btn_hover_bg: var(--clr_dark_warm);
+    --btn_hover_border: var(--clr_light_cool);
+    --btn_hover_txt: var(--clr_light_neutral);
 }
 
 /*--------------------------- 
@@ -973,6 +902,29 @@ body {
     cursor: pointer;
     margin: 0;
     padding: 1% 2%;
+}
+
+/*-------------------- 
+    404 errorpage
+---------------------*/
+
+.error_main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2% auto 10%;
+    max-width: 65%;
+}
+
+.error_main .head_2 {
+    font-weight: 500;
+    line-height: 3rem;
+    text-align: center;
+}
+
+.error_main .cta_btn {
+    font-weight: 600;
 }
 
 /*--------------------------- 

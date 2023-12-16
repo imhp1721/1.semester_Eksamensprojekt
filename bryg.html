@@ -19,7 +19,7 @@
 
 <!-- Start of visible content -->
 
-<body class="body_grid">
+<body>
 
     <!----------------------------
         Header and navigation
@@ -137,10 +137,13 @@
     </header>
 
     <!----------------------------
-        page main content
+        page main section
     ------------------------------>
 
     <main class="main bryg">
+
+        <!-- hero section -->
+
         <section class="hero">
             <img class="hero_img" src="img/vores_bryg/hero_1.5.jpg" alt="Toppen af ølflasker på række" sizes="100vw" srcset="
                 img/vores_bryg/hero_mobil_0.3.png 338w, 
@@ -150,12 +153,22 @@
                 img/vores_bryg/hero_1.5.jpg 2880w">
             <div class="hero_edge"></div>
         </section>
+
+        <!-- header and introduction text -->
+
         <article class="intro">
             <h2 class="head_2">Vores bryg</h2>
             <p class="intro_txt">Vi gør en ære i at lave bane&shy;brydende, lækre smags&shy;varianter og dertil laver vi ALLE vores øl både med og uden alkohol.</p>
         </article>
+
+        <!-- main content -->
+
         <section class="content">
-            <div class="card_1">
+
+            <!-- cards with beer variants -->
+
+            <!-- "dragens dyb" -->
+            <div class="cards">
                 <div class="card dragens_dyb">
                     <img class="beerlabel" src="img/vores_bryg/dragens_dyb/label_4.png" alt="Ølmærkat til variant kaldet Dragens dyb" sizes="80vw" srcset="
                         img/vores_bryg/dragens_dyb/label_1.png 436w, 
@@ -164,7 +177,9 @@
                     <button data-open-dragen class="cta_btn">se indhold</button>
                 </div>
             </div>
-            <dialog data-indholdDragen class="pop_up_box">
+
+            <!-- pop up with ingredients -->
+            <dialog data-indholdDragen class="pop_up_box dragens_dyb">
                 <div class="pop_up">
                     <div class="product">
                         <img class="product_img" src="img/vores_bryg/dragens_dyb/flasker_1.png" alt="Ølflasker med mærkaten Dragens dyb" sizes="50vw" srcset="
@@ -181,7 +196,8 @@
                 <button data-close-dragen class="cta_btn">luk vindue</button>
             </dialog>
 
-            <div class="card_2">
+            <!-- "himmelflugt" -->
+            <div class="cards">
                 <div class="card himmelflugt">
                     <img class="beerlabel" src="img/vores_bryg/himmelflugt/label_4.png" alt="Ølmærkat til variant kaldet Himmelflugt" sizes="80vw" srcset="
                     img/vores_bryg/himmelflugt/label_1.png 436w, 
@@ -191,7 +207,8 @@
                 </div>
             </div>
             
-            <div class="card_3">
+            <!-- "solnedgang" -->
+            <div class="cards">
                 <div class="card solnedgang">
                     <img class="beerlabel" src="img/vores_bryg/solnedgang/label_4.png" alt="Ølmærkat til variant kaldet Solnedgang" sizes="80vw" srcset="
                         img/vores_bryg/solnedgang/label_1.png 436w, 
@@ -201,7 +218,8 @@
                 </div>
             </div>
 
-            <div class="card_4">
+            <!-- "syrlig sommer" -->
+            <div class="cards">
                 <div class="card syrlig_sommer">
                     <img class="beerlabel" src="img/vores_bryg/syrlig_sommer/label_4.png" alt="Ølmærkat til variant kaldet Syrlig sommer" sizes="80vw" srcset="
                         img/vores_bryg/syrlig_sommer/label_1.png 436w, 
@@ -211,17 +229,19 @@
                 </div>
             </div>
 
-            <div class="card_5">
-                <div class="card tropiske_rødder">
-                    <img class="beerlabel" src="img/vores_bryg/tropiske_rødder/label_4.png" alt="Ølmærkat til variant kaldet Tropiske rødder" sizes="80vw" srcset="
-                        img/vores_bryg/tropiske_rødder/label_1.png 437w, 
-                        img/vores_bryg/tropiske_rødder/label_2.png 872w, 
-                        img/vores_bryg/tropiske_rødder/label_4.png 1742w">
+            <!-- "tropiske rødder" -->
+            <div class="cards">
+                <div class="card tropiske_rodder">
+                    <img class="beerlabel" src="img/vores_bryg/tropiske_rodder/label_4.png" alt="Ølmærkat til variant kaldet Tropiske rødder" sizes="80vw" srcset="
+                        img/vores_bryg/tropiske_rodder/label_1.png 437w, 
+                        img/vores_bryg/tropiske_rodder/label_2.png 872w, 
+                        img/vores_bryg/tropiske_rodder/label_4.png 1742w">
                     <button class="cta_btn">se indhold</button>
                 </div>
             </div>
 
-            <div class="card_6">
+            <!-- "ubærlig sødme" -->
+            <div class="cards">
                 <div class="card ubaerlig_sodme">
                     <img class="beerlabel" src="img/vores_bryg/ubaerlig_sodme/label_4.png" alt="Ølmærkat til variant kaldet Ubærlig sødme" sizes="80vw" srcset="
                         img/vores_bryg/ubaerlig_sodme/label_1.png 436w, 
