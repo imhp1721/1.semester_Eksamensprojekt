@@ -45,7 +45,7 @@
     --xl_font_size: 2.5rem;
     --l_font_size: 1.8rem;
     --m_font_size: 1.6rem;
-    --s_font_size: 1.4rem;
+    --s_font_size: 1.5rem;
     --xs_font_size: 1.2rem;
 
     /*--- variables for transitions ---*/
@@ -92,7 +92,7 @@ body {
     border-radius: .8rem;
     color: var(--btn_txt_clr);
     font-family: var(--header_font);
-    font-size: var(--xs_font_size);
+    font-size: var(--s_font_size);
     margin: 1%;
     padding: .25rem .5rem;
     text-transform: uppercase;
@@ -141,11 +141,14 @@ body {
     font-size: var(--xl_font_size);
     font-weight: 600;
     letter-spacing: .5rem;
+    position: absolute;
     text-align: center;
     text-shadow: 
         1px 1px 5px var(--clr_dark_neutral), 
         -1px -1px 5px var(--clr_dark_neutral);
     text-transform: uppercase;
+    top: 40%;
+    width: 100%;
 }
 
 .head_4 {
@@ -181,9 +184,9 @@ body {
 }
 
 .txt {
-    font-size: var(---s_font);
+    font-size: var(--s_font_size);
     font-weight: 500;
-    line-height: 1.5rem;
+    line-height: 1.8rem;
 }
 
 /*--------------------------- 
@@ -357,6 +360,12 @@ body {
     background-color: var(--clr_dark_neutral);
 }
 
+.hero_img {
+    max-height: 35vh;
+    object-fit: cover;
+    width: 100%;
+}
+
 .hero_edge {
     background-color: var(--clr_mid_neutral);
     border-top: 1px solid var(--clr_dark_neutral);
@@ -413,6 +422,10 @@ body {
     padding: 10%;
 }
 
+.img {
+    border-radius: 1rem;
+}
+
 /* set card colors for index and "om" sub page */
 
 .card.left {
@@ -467,6 +480,8 @@ body {
     height: 20vw;
     object-fit: cover;
 }
+
+/*--- pop up with ingredients ---*/
 
 .pop_up_box {
     background-color: transparent;
@@ -531,6 +546,8 @@ body {
     color: var(--btn_hover_txt);
 }
 
+/*--- different colors for each variant ---*/
+
 .dragens_dyb {
     --btn_bg_clr: var(--clr_dark_cool);
     --btn_border_clr: var(--clr_light_neutral);
@@ -571,78 +588,55 @@ body {
     "events" sub page
 ---------------------------*/
 
-.hero_img.events {
-    max-height: 30vh;
-    object-fit: cover;
-    width: 100%;
+.events .intro {
+    margin: 0 10%;
 }
 
-.head_4.events {
-    font-weight: 500;
-}
-
-.events_content {
+.part_1,
+.part_2 {
     display: flex;
-    flex-direction: column;
+    grid-column: span 3;
     justify-content: space-between;
-    margin: 0 10vw 5%;
-    max-width: 100%;
+}
+
+.text {
+    max-width: 65%;
+    padding: 3% 7%;
+}
+
+.part_1 .txt,
+.part_2 .txt {
+    padding: 5% 0;
     text-align: justify;
 }
 
-.events_content .big,
-.events_content .small {
-    border: 1px solid var(---dark_neutral);
-    border-radius: 2em;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-}
-
-.events_content .main_txt {
-    font-size: var(---m_font);
-    line-height: 2rem;
-    padding: 5% 0;
-}
-
-.part_1 {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5%;
+.part_1 .img_box {
+    max-width: 30vw;
 }
 
 .part_1 .img {
-    height: 30vw;
-    translate: -5vw 0;
+    height: 25vw;
+    object-fit: cover;
 }
 
-.part_1 .txt {
-    max-width: 55%;
-    padding-top: 2em;
+.part_1 .head_4 {
+    text-align: left;
 }
 
 .part_2 {
-    display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
 }
 
-.part_2 .img {
-    height: 25vw;
-    translate: 5vw -10vw;
+.part_2 .text {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
 }
 
-.part_2 .txt {
-    max-width: 70%;
-}
-
-.part_2 .head_3 {
-    text-align: right;
-}
-
-.events_content .cta_btn {
-    margin: 0;
-    padding: 1% 2%;
+.part_2 .img_box {
+    max-width: 20vw;
+    translate: 0 -15%;
 }
 
 /*--------------------------- 
