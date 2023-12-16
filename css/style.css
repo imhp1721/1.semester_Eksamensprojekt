@@ -75,25 +75,6 @@ body {
     width: 100%;
 }
 
-.body_grid {
-    display: grid;
-    grid-gap: 0 50px;
-    grid-template-rows: repeat(5, auto);
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
-    grid-template-areas: 
-    "header header header"
-    "hero hero hero"
-    "intro intro intro"
-    "main_1 main_2 main_3"
-    "footer footer footer"
-    ;
-}
-
-.main {
-    display: grid;
-    grid-area: 2 / 1 / 5 / 4;
-}
-
 /*--- call-to-action button ---*/
 
 .cta_btn {
@@ -362,7 +343,6 @@ body {
 
 .hero {
     background-color: var(--clr_dark_neutral);
-    grid-area: 2 / 1 / 3 / 4;
 }
 
 .hero_edge {
@@ -390,7 +370,6 @@ body {
 ----------------------*/
 
 .intro {
-    grid-area: 3 / 1 / 4 / 4;
     margin: 0 10%;
 }
 
@@ -399,47 +378,31 @@ body {
 ----------------------*/
 
 .content {
-    grid-area: 4 / 1 / 5 / 4;
-    margin: 0 3% 10%;
+    display: grid;
+    gap: 0 3%;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 5% 3% 15%;
 }
 
 .card {
-    
+    align-items: center;
     background-color: var(--clr_dark_neutral);
     border: 2px solid var(--clr_dark_neutral);
     border-radius: 2em;
-    
-    
-    
-    
-    margin: 2vw;
-    max-width: 100%;
-    padding: 30px;
-}
-
-.card .img {
-    max-width: 100%;
-}
-
-.card_1 {
-    display: grid;
-    grid-area: 4 / 1 / 5 / 2;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    justify-content: space-between;
+    margin-top: 5%;
+    padding: 10%;
 }
 
 .card.left {
     background-color: var(--clr_mid_warm);
 }
 
-.card_2 {
-    grid-area: 4 / 2 / 5 / 3;
-}
-
 .card.mid {
     background-color: var(--clr_mid_neutral);
-}
-
-.card_3 {
-    grid-area: 4 / 3 / 5 / 4;
 }
 
 .card.right {
@@ -451,8 +414,8 @@ body {
 -------------------*/
 
 .index .hero_img {
-    padding: 2% 10% 0;
-    width: 80%;
+    padding: 2% 5% 0;
+    width: 90%;
 }
 
 .welcome {
@@ -467,8 +430,6 @@ body {
     max-height: 4rem;
     padding: 0 5%;
 }
-
-
 
 /*-------------------- 
     404 errorpage
@@ -1052,7 +1013,7 @@ body {
 }
 
 .top_link:hover {
-    background-color: var(---light_warm);
+    background-color: var(--clr_mid_warm);
 }
 
 .top_img {
@@ -1069,13 +1030,12 @@ body {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     text-align: left;
     width: 25%;
 }
 
 .foot_om .cta_btn {
-    font-size: var(---xs_font);
+    margin: 5% 1% 1%;
 }
 
 .foot_some {
@@ -1188,7 +1148,6 @@ body {
     }
 
     .logo_img {
-        padding: 10%;
     }
 
     /*--- navbar ---*/
