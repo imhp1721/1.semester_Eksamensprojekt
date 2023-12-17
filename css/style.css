@@ -20,7 +20,7 @@
     /*--- font families ---*/
 
     --header_font: all-round-gothic, sans-serif;
-    /* font weights: 
+    /* font weights:
         XLig = 200
         Book = 400
         Medium = 500
@@ -29,7 +29,7 @@
     */
 
     --main_txt_font: como, sans-serif;
-    /* font weights: 
+    /* font weights:
         ExtraLight = 200
         Light = 300
         Regular = 400
@@ -73,7 +73,7 @@
     --btn_hover_border: var(--clr_dark_neutral);
 }
 
-/*-------------------- 
+/*--------------------
     general styling
 ---------------------*/
 
@@ -91,6 +91,7 @@ body {
     border: 1px solid var(--btn_border_clr);
     border-radius: .8rem;
     color: var(--btn_txt_clr);
+    cursor: pointer;
     font-family: var(--header_font);
     font-size: var(--xs_font_size);
     font-weight: 500;
@@ -110,7 +111,7 @@ body {
 
 .menu_link {
     font-family: var(--header_font);
-    font-size: var(--m_font_size);
+    font-size: 1.6rem;
     font-weight: 500;
 }
 
@@ -135,6 +136,7 @@ body {
     letter-spacing: .5rem;
     text-align: center;
     text-transform: uppercase;
+    width: 100%;
 }
 
 .head_3 {
@@ -145,8 +147,8 @@ body {
     letter-spacing: .2em;
     position: absolute;
     text-align: center;
-    text-shadow: 
-        1px 1px 3px var(--clr_dark_neutral), 
+    text-shadow:
+        1px 1px 3px var(--clr_dark_neutral),
         -1px -1px 3px var(--clr_dark_neutral);
     text-transform: uppercase;
     top: 40%;
@@ -160,6 +162,7 @@ body {
     font-weight: 500;
     letter-spacing: .2rem;
     text-align: center;
+    width: 100%;
 }
 
 .head_5 {
@@ -179,12 +182,12 @@ body {
 .txt {
     font-size: var(--s_font_size);
     font-weight: 500;
-    line-height: 1.8rem;
+    line-height: 1.3em;
     padding: 5% 0;
     text-align: justify;
 }
 
-/*--------------------------- 
+/*---------------------------
     header and navigation
 ----------------------------*/
 
@@ -216,7 +219,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: flex-end;
-    margin: 0 3vw;
+    margin: 0 5%;
     z-index: 8;
 }
 
@@ -259,6 +262,8 @@ body {
     justify-content: center;
     left: 0;
     opacity: 0;
+    padding-left: 10%;
+    pointer-events: none;
     position: absolute;
     top: 0;
     transform: translateY(-110%);
@@ -291,19 +296,20 @@ body {
     justify-content: flex-end;
     opacity: 0;
     padding: 1%;
+    pointer-events: none;
     position: absolute;
     right: 0;
     top: 0;
     transform: translateY(-110%);
     transition: all var(--fast_timing);
-    width: 100vw;
+    width: 100%;
 }
 
 .sog_felt {
     background-color: var(--clr_light_neutral);
     border: none;
     font-family: var(--main_txt_font);
-    font-size: var(--s_font_size);
+    font-size: var(--xs_font_size);
     width: 75%;
 }
 
@@ -321,6 +327,7 @@ body {
 .sub_arrow:has(input:checked) + .sub_menu,
 .sog:has(input:checked) + .sog_box {
     opacity: 1;
+    pointer-events: all;
     transform: translateY(125%);
     transition: all var(--semi_fast_timing);
     z-index: 2;
@@ -340,7 +347,8 @@ body {
 .menu_link:hover,
 .sub_arrow:hover,
 .sog:hover,
-.sub_item:hover {
+.sub_item:hover,
+.some_img:hover {
     opacity: .6;
 }
 
@@ -349,17 +357,14 @@ body {
     cursor: pointer;
 }
 
-/*--------------------- 
-    hero
-----------------------*/
+/*------------------------------------
+    general styling of main section
+-------------------------------------*/
 
-.hero {
-    background-color: var(--clr_dark_neutral);
-}
+/*--- hero ---*/
 
 .hero_img {
-    max-height: 35vh;
-    object-fit: cover;
+    max-height: 25vh;
     width: 100%;
 }
 
@@ -383,9 +388,7 @@ body {
     width: 100%;
 }
 
-/*--------------------- 
-    intro
-----------------------*/
+/*--- intro ---*/
 
 .intro {
     margin: 5% auto 0;
@@ -403,9 +406,7 @@ body {
     text-align: justify;
 }
 
-/*--------------------- 
-    content
-----------------------*/
+/*--- content ---*/
 
 .content {
     display: grid;
@@ -437,8 +438,7 @@ body {
 
 .img {
     border: 1px solid var(--clr_dark_neutral);
-    border-radius: 1rem;
-    object-fit: cover;
+    border-radius: 1em;
 }
 
 /* set color and alignment */
@@ -458,9 +458,13 @@ body {
     text-align-last: right;
 }
 
-/*------------------ 
+/*------------------
     landingpage
 -------------------*/
+
+.index .hero {
+    background-color: var(--clr_dark_neutral);
+}
 
 .index .hero_img {
     padding: 2% 5% 0;
@@ -479,7 +483,7 @@ body {
     max-height: calc(var(--xl_font_size)* 1.5);
 }
 
-/*--------------------------- 
+/*---------------------------
     "vores bryg" sub page
 ---------------------------*/
 
@@ -495,7 +499,6 @@ body {
 
 .beerlabel {
     height: 20vw;
-    object-fit: cover;
     padding-top: 2%;
 }
 
@@ -504,9 +507,10 @@ body {
 .pop_up_box {
     background-color: transparent;
     border: none;
-    height: 65vh;
+    height: 60vh;
+    max-width: 800px;
     padding: 0;
-    width: 75vw;
+    width: 80vw;
 }
 
 .pop_up_box::backdrop {
@@ -516,7 +520,7 @@ body {
 
 .pop_up {
     height: 100%;
-    position: absolute;
+    position: relative;
     width: 100%;
 }
 
@@ -541,15 +545,13 @@ body {
 }
 
 .info_img {
+    height: 100%;
     max-height: 55vh;
     width: 100%;
 }
 
 .pop_up_box .cta_btn {
     bottom: 0;
-    cursor: pointer;
-    margin: 0;
-    padding: 1% 2%;
     position: absolute;
     right: 0;
 }
@@ -595,7 +597,7 @@ body {
     --btn_hover_txt: var(--clr_light_neutral);
 }
 
-/*--------------------------- 
+/*---------------------------
     "events" sub page
 ---------------------------*/
 
@@ -609,10 +611,6 @@ body {
 .text {
     max-width: 65%;
     padding: 3% 7%;
-}
-
-.part_1 .img_box {
-    max-width: 30vw;
 }
 
 .part_1 .img {
@@ -634,12 +632,16 @@ body {
     max-width: 75%;
 }
 
+.part_2 .head_4 {
+    text-align: right;
+}
+
 .part_2 .img_box {
     max-width: 20vw;
     translate: 0 -5%;
 }
 
-/*--------------------------- 
+/*---------------------------
     "om os" sub page
 ---------------------------*/
 
@@ -650,18 +652,9 @@ body {
     justify-content: space-between;
 }
 
-.om .head_2 {
-    width: 100%;
-}
-
-.om .intro_txt {
-    max-width: 60%;
-}
-
 .om .img_box {
     height: 35vw;
     max-width: 35%;
-    position: relative;
     right: 0;
 }
 
@@ -670,6 +663,12 @@ body {
     height: 100%;
     width: 100%;
 }
+
+.om .intro_txt {
+    max-width: 60%;
+}
+
+/*--- cards ---*/
 
 .om .cards {
     position: relative;
@@ -713,6 +712,8 @@ body {
     top: -10%;
 }
 
+/*--- about owners ---*/
+
 .owner_section {
     display: flex;
     flex-wrap: wrap;
@@ -720,30 +721,20 @@ body {
     padding-top: 5%;
 }
 
-.owner_section .head_4 {
-    width: 100%;
-}
-
-.owner_section .intro_txt {
-    padding: 5%;
-    width: 60%;
-}
-
-.big_bro {
+.big_bro,
+.lil_bro {
     display: flex;
     flex-direction: column;
+    gap: 2%;
     justify-content: center;
     width: 20%;
 }
 
 .lil_bro {
-    display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
-    width: 20%;
 }
 
-/*--------------------------- 
+/*---------------------------
     "kontakt" sub page
 ---------------------------*/
 
@@ -753,16 +744,13 @@ body {
     flex-direction: column;
 }
 
-.kontakt .head_4 {
-    padding-left: 7vw;
-}
-
 .contact_form {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
     grid-column: span 3;
-    padding: 3% 7% 0;
+    margin: 3% 0;
+    width: 100%;
 }
 
 .form_txt {
@@ -778,19 +766,18 @@ body {
     margin-bottom: 2%;
     padding: 1%;
     resize: none;
-    width: 100%;
+    width: 97%;
 }
 
 .contact_form .cta_btn {
     align-self: center;
 }
 
-/*-------------------- 
+/*--------------------
     404 errorpage
 ---------------------*/
 
 .error .intro {
-    margin: 5% auto 0;
     max-width: 65%;
 }
 
@@ -803,7 +790,7 @@ body {
     margin: 0 auto;
 }
 
-/*--------------------------- 
+/*---------------------------
     footer
 ----------------------------*/
 
@@ -813,7 +800,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 5% 3% 2%;
+    padding: 5% 5% 2%;
     position: relative;
 }
 
@@ -880,13 +867,8 @@ body {
 }
 
 .some_img {
-    height: fit-content;
-    max-width: 50px;
+    max-width: 70px;
     width: 100%;
-}
-
-.some_img:hover {
-    opacity: .6;
 }
 
 .foot_kontakt {
@@ -895,7 +877,7 @@ body {
 }
 
 .foot_kontakt .txt {
-    padding: 3% 0;
+    padding: 0;
     text-align: right;
 }
 
@@ -906,7 +888,7 @@ body {
 }
 
 /*------------------------------------------------
-    styling for smaller and extra large screens 
+    styling for smaller and extra large screens
 -------------------------------------------------*/
 
 @media (max-width: 1050px) {
@@ -938,13 +920,11 @@ body {
         --xs_font_size: 1rem;
     }
 
-    /*--- text elements ---*/
-
     .head_6 {
         padding: 3% 0 2%;
     }
 
-    /*--------------------------- 
+    /*---------------------------
         header and navigation
     ----------------------------*/
 
@@ -955,20 +935,15 @@ body {
         z-index: 9;
     }
 
-    /*--- logo ---*/
-
     .logo_link {
         border-radius: 1.5em 1.5em 0 0;
-        translate: 0 -35%;
+        translate: 0 -40%;
         width: 40%;
     }
-
-    /*--- navbar ---*/
 
     .navigation {
         align-items: flex-end;
         flex-direction: column-reverse;
-        margin: 0 5%;
     }
 
     /*--- main menu ---*/
@@ -1005,20 +980,11 @@ body {
         width: 100%;
     }
 
-    /*--- sub menus ---*/
-
     .sub_menu {
         align-items: flex-start;
         flex-direction: column;
-        font-size: var(--l_font_size);
-        justify-content: flex-start;
         padding-left: 5%;
-        pointer-events: none;
         transform: translateY(0);
-    }
-
-    .sub_item {
-        padding: 2%;
     }
 
     /*--- navigation icons ---*/
@@ -1045,14 +1011,11 @@ body {
     }
 
     .sog_box {
-        left: 0;
-        pointer-events: none;
         transform: translateY(0);
     }
 
     .sog_felt {
-        margin-right: 5%;
-        width: 60%;
+        width: 65%;
     }
 
     /*--- burgermenu ---*/
@@ -1117,7 +1080,6 @@ body {
     /* search bar */
 
     .sog:has(input:checked) + .sog_box {
-        pointer-events: all;
         transform: translateY(-90%);
         z-index: 1;
     }
@@ -1128,15 +1090,15 @@ body {
     .menu_link:hover,
     .sub_arrow:hover,
     .sog:hover,
-    .sub_item:hover {
+    .sub_item:hover,
+    .some_img:hover {
         opacity: 1;
     }
 
     /* sub menus */
 
     .sub_arrow:has(input:checked) + .sub_menu {
-        pointer-events: all;
-        transform: translateY(95%);
+        transform: translateY(100%);
     }
 
     .sub_arrow:has(input:checked) + .om_sub {
@@ -1144,32 +1106,23 @@ body {
         transform: translateY(30%);
     }
 
-    /*--------------------- 
-        hero
-    ----------------------*/
-
-    .hero_img {
-        max-height: 25vh;
-    }
-
-    /*------------------------------- 
-        intro
-    --------------------------------*/
-
-    .intro_txt {
-        padding: 5%;
-    }
-
-    /*--------------------- 
+    /*---------------------
         content
     ----------------------*/
 
     .content {
-        display: grid;
-        gap: 0 3%;
         grid-template-columns: repeat(2, 1fr);
-        padding: 5% 3% 15%;
     }
+
+    .index .content,
+    .om .content,
+    .kontakt .content {
+        width: 80%;
+    }
+
+    /*------------------
+        landingpage
+    -------------------*/
 
     .index .cards {
         grid-column: span 2;
@@ -1178,43 +1131,37 @@ body {
 
     .index .card {
         display: grid;
+        gap: 0 5%;
         grid-column: subgrid;
         grid-template-columns: repeat(2, 1fr);
-        height: 70%;
-        margin: 5% auto;
+        margin: 3% auto 7%;
         padding: 5%;
-        max-width: 75vw;
+        text-align-last: left;
     }
 
     .index .card .img {
         grid-row: span 2;
         height: 100%;
-        width: 80%;
     }
 
-    /*--------------------------- 
+    /*---------------------------
         "vores bryg" sub page
     ---------------------------*/
 
     .pop_up_box {
         height: 70vh;
-        width: 60vw;
     }
-    
+
     .product {
         max-width: 50%;
         top: 0;
         z-index: initial;
     }
-    
+
     .info {
         bottom: 0;
         max-height: 100%;
         top: auto;
-    }
-
-    .info_img {
-        height: 100%;
     }
 
     .pop_up_box .cta_btn {
@@ -1226,17 +1173,13 @@ body {
         margin-bottom: 10%;
     }
 
-    /*--------------------------- 
+    /*---------------------------
         "om os" sub page
     ---------------------------*/
 
     .om .hero_img,
     .om .cards {
         display: none;
-    }
-
-    .om .hero {
-        background-color: transparent;
     }
 
     .om .hero_edge {
@@ -1248,9 +1191,10 @@ body {
     .om .intro {
         flex-direction: column;
         flex-wrap: nowrap;
+        width: 80%;
     }
 
-    .om .intro .intro_txt {
+    .om .intro_txt {
         max-width: 100%;
         padding: 5% 0;
     }
@@ -1266,35 +1210,17 @@ body {
 
     .om .intro .img {
         border: 20px solid var(--clr_dark_neutral);
-        border-radius: 2rem;
         box-sizing: border-box;
     }
-        
+
     .owner_section {
-        align-items: center;
         flex-direction: column;
         flex-wrap: nowrap;
-        margin: 5%;
         padding: 0;
-    }
-
-    .owner_section .head_4 {
-        padding: 0 0 3%;
-    }
-
-    .owner_section .intro_txt {
-        max-width: 100%;   
-        padding: 5% 0;
-        width: 100%;
     }
 
     .name {
         max-width: 30%;
-    }
-
-    .name img {
-        padding: 5%;
-        width: 100%;
     }
 
     .owner_section .img {
@@ -1302,31 +1228,27 @@ body {
         max-width: 40%;
     }
 
-    .big_bro {
-        align-items: center;
-        flex-direction: row-reverse;
-        gap: 3%;
-        padding: 3% 0;
-        width: 100%;
-    }
-
+    .big_bro,
     .lil_bro {
         align-items: center;
         flex-direction: row;
-        gap: 5%;
-        padding: 3% 0;
         width: 100%;
     }
 
-    /*--------------------------- 
-        error
+    .big_bro {
+        flex-direction: row-reverse;
+        padding: 5% 0 0;
+    }
+
+    /*---------------------------
+        404 errorpage
     ----------------------------*/
 
     .error .content {
         display: flex;
     }
 
-    /*--------------------------- 
+    /*---------------------------
         footer
     ----------------------------*/
 
@@ -1334,37 +1256,28 @@ body {
         padding: 5% 5% 20%;
     }
 
-    .footer .txt {
-        padding: 1% 0;
-    }
-
-    /*--- adjust sizing ---*/
-
     .top_link {
         height: 50px;
-        right: 5%;
         width: 50px;
     }
-    
-    /*--- actual footer ---*/
-    
+
     .foot_om {
         display: none;
     }
-    
+
     .foot_some {
         justify-content: flex-start;
-        width: 35%;
+        width: 40%;
     }
 
     .some_link {
         padding: 5% 15% 10% 5%;
     }
-    
+
     .foot_kontakt {
-        width: 65%;
+        width: 55%;
     }
-    
+
     .copy_txt {
         bottom: 25%;
         position: absolute;
@@ -1379,7 +1292,7 @@ body {
 
 @media (max-width: 600px) {
     :root {
-        
+
         /*--- font sizes ---*/
 
         --xl_font_size: 1.5rem;
@@ -1387,46 +1300,34 @@ body {
         --m_font_size: 1.2rem;
     }
 
-    /*--- ensure visiblity ---*/
-
-    .logo_link {
-        translate: 0 -40%;
-        width: 35vw;
-    }
-
     .sog_felt {
         width: 55%;
     }
 
-    /*--------------------------- 
+    /*---------------------------
         "vores bryg" sub page
     ---------------------------*/
 
-    .pop_up_box {
-        height: 70vh;
-        width: 75vw;
-    }
-    
     .indhold {
         display: flex;
         justify-content: center;
     }
-    
+
     .info {
         max-height: 80%;
         max-width: 100%;
     }
 
-    /*--------------------------- 
+    /*---------------------------
         "events" sub page
     ---------------------------*/
 
     .events .content {
         display: block;
     }
-    
-    .events .content .part_1,
-    .events .content .part_2 {
+
+    .part_1,
+    .part_2 {
         align-items: center;
         flex-direction: column;
     }
@@ -1436,7 +1337,7 @@ body {
         height: 25vw;
         margin: 5%;
         max-width: 100%;
-        width: 80%;
+        width: 90%;
     }
 
     .part_1 .img,
@@ -1455,26 +1356,9 @@ body {
         align-self: center;
     }
 
-    /*--------------------------- 
-        "om os" sub page
-    ---------------------------*/
-
-    .owner_section {
-        margin: 5%;
-        max-width: 90%;
-    }
-
-    /*--------------------------- 
+    /*---------------------------
         footer
     ----------------------------*/
-
-    .foot_some {
-        width: 40%;
-    }
-    
-    .foot_kontakt {
-        width: 55%;
-    }
 
     .copy_txt {
         display: none;
@@ -1485,7 +1369,7 @@ body {
 
 @media (max-width: 350px) {
     :root {
-        
+
         /*--- font sizes ---*/
 
         --xl_font_size: 1.2rem;
@@ -1495,14 +1379,7 @@ body {
         --xs_font_size: .8rem;
     }
 
-    /*--- ensure visiblity ---*/
-
-    .sog_felt {
-        margin-right: 10%;
-        width: 50%;
-    }
-
-    /*--------------------------- 
+    /*---------------------------
         "vores bryg" sub page
     ---------------------------*/
 
@@ -1512,22 +1389,20 @@ body {
 
     .bryg .card {
         height: 60vw;
-        margin: 5%;
+        margin: 10% 5%;
     }
 
     .beerlabel {
         height: auto;
-        width: 100%;
     }
 
-    .pop_up_box {
-        height: 65vh;
-        width: 85vw;
-    }
-    
     .product {
         max-width: 80%;
     }
+
+    /*---------------------------
+        "om" sub page
+    ---------------------------*/
 
     .om .hero_edge {
         height: 230px;
@@ -1550,15 +1425,13 @@ body {
         max-width: 50%;
     }
 
-    /*--------------------------- 
+    /*---------------------------
         footer
     ----------------------------*/
 
     .foot_some {
         width: 45%;
     }
-
-    /*--- adjust sizing ---*/
 
     .top_link {
         height: 40px;
@@ -1574,27 +1447,9 @@ body {
 
         /*--- font sizes ---*/
 
-        ---xl_font: 2.4rem;
-        ---l_font: 2.2rem;
-        ---m_font: 2rem;
-        ---s_font: 1.8rem;
-    }
-
-    /*--- balance space and sizes ---*/
-
-    .txt {
-        line-height: 2rem;
-    }
-
-    .sog_felt {
-        font-size: 1.5rem;
-    }
-    
-    .foot_some {
-        width: 30%;
-    }
-    
-    .some_img {
-        max-width: 70px;
+        --xl_font_size: 2.4rem;
+        --l_font_size: 2.2rem;
+        --m_font_size: 2rem;
+        --s_font_size: 1.8rem;
     }
 }
