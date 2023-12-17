@@ -428,6 +428,7 @@ body {
 .img {
     border: 1px solid var(--clr_dark_neutral);
     border-radius: 1rem;
+    object-fit: cover;
 }
 
 /* set color and alignment */
@@ -618,7 +619,6 @@ body {
 
 .part_1 .img {
     height: 25vw;
-    object-fit: cover;
 }
 
 .part_1 .head_4 {
@@ -638,7 +638,7 @@ body {
 
 .part_2 .img_box {
     max-width: 20vw;
-    translate: 0 -15%;
+    translate: 0 -5%;
 }
 
 /*--------------------------- 
@@ -792,23 +792,20 @@ body {
     404 errorpage
 ---------------------*/
 
-.error_main {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 2% auto 10%;
+.error .intro {
+    margin: 5% auto 0;
     max-width: 65%;
 }
 
-.error_main .head_2 {
-    font-weight: 500;
-    line-height: 3rem;
-    text-align: center;
+.error .intro .head_4 {
+    line-height: 2.5rem;
 }
 
-.error_main .cta_btn {
-    font-weight: 600;
+.error .content .cta_btn {
+    font-weight: 500;
+    grid-column: 2 / 3;
+    margin: 0 auto;
+    width: fit-content;
 }
 
 /*--------------------------- 
@@ -925,11 +922,6 @@ body {
 
     .pop_up {
         height: 55vh;
-    }
-
-    .part_2 .img {
-        height: 25vw;
-        translate: 5vw -7vw;
     }
 
     .foot_some {
